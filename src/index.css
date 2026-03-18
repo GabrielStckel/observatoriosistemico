@@ -64,6 +64,15 @@
     -webkit-font-smoothing: antialiased;
   }
 
+  p {
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    text-justify: inter-character;
+  }
+
   h1, h2, h3, h4, h5, h6 {
     @apply font-display;
   }
