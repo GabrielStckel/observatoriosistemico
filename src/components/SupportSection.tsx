@@ -10,10 +10,10 @@ const SupportSection = () => {
             <p className="text-foreground text-justify">
               Encontros em grupo (online) de estudo guiado da literatura sistêmica, bem como discussão e elucidação de casos de atendimentos e processos internos ocorridos durante a trajetória dos membros.
             </p>
-            <p className="text-muted-foreground text-sm text-center">
+            <p className="text-foreground text-justify">
               Na última quarta-feira de todo mês, a partir das 20h30min. (horário sugerido)
             </p>
-            <p className="text-muted-foreground text-sm text-center">
+            <p className="text-foreground text-justify">
               Primeira obra: a definir
             </p>
           </div>
