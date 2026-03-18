@@ -2,7 +2,7 @@ import SectionTitle from "./SectionTitle";
 
 const LaboratorySection = () => {
   return (
-    <section className="gradient-hero py-16 md:py-32">
+    <section className="gradient-hero py-10 md:py-16">
       <div className="container max-w-2xl">
         <SectionTitle label="Laboratório Sistêmico" light />
         <div className="border-l-2 border-accent/40 pl-5 md:pl-8">

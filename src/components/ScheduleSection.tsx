@@ -15,7 +15,7 @@ const schedule = [
 
 const ScheduleSection = () => {
   return (
-    <section className="section-muted py-16 md:py-32">
+    <section className="section-muted py-10 md:py-16">
       <div className="container max-w-3xl">
         <SectionTitle label="Cronograma de encontros" />
 

@@ -6,17 +6,13 @@ interface SectionTitleProps {
 
 const SectionTitle = ({ label, subtitle, light = false }: SectionTitleProps) => {
   return (
-    <div className="mb-12 px-1">
-      <h2 className="inline-block">
-        <span
-          className="font-body font-bold text-xl tracking-tight px-3 py-1.5 rounded-md"
-          style={{
-            color: light ? "hsl(var(--primary-foreground))" : "hsl(220 86% 45%)",
-            backgroundColor: light ? "hsla(0, 0%, 100%, 0.1)" : "hsl(220 86% 56% / 0.08)",
-          }}
-        >
-          {label}
-        </span>
+    <div className="mb-8 px-1">
+      <h2
+        className={`font-display text-2xl md:text-3xl font-medium tracking-tight ${
+          light ? "text-primary-foreground" : "text-foreground"
+        }`}
+      >
+        {label}
       </h2>
       {subtitle && (
         <p
