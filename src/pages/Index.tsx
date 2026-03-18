@@ -6,6 +6,8 @@ import SupportSection from "@/components/SupportSection";
 import LaboratorySection from "@/components/LaboratorySection";
 import HybridSection from "@/components/HybridSection";
 import ScheduleSection from "@/components/ScheduleSection";
+import ContactSection from "@/components/ContactSection";
+import { Instagram } from "lucide-react";
 
 const Index = () => {
   return (
@@ -18,14 +20,24 @@ const Index = () => {
       <LaboratorySection />
       <HybridSection />
       <ScheduleSection />
+      <ContactSection />
 
-      <footer className="section-white py-16 border-t border-border">
+      <footer className="gradient-hero py-10">
         <div className="container text-center">
-          <p className="font-body text-sm font-semibold text-foreground tracking-wide">
+          <p className="font-body text-sm font-semibold text-primary-foreground tracking-wide">
             Observatório Sistêmico
           </p>
-          <p className="text-muted-foreground text-xs mt-2 font-body">
-            Ciência Sistêmica · Constelação · Comunidade
+          <a
+            href="https://www.instagram.com/jonas_peress/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 mt-4 text-primary-foreground/70 hover:text-primary-foreground transition-colors"
+          >
+            <Instagram size={18} />
+            <span className="text-sm font-body">@jonas_peress</span>
+          </a>
+          <p className="text-primary-foreground/50 text-xs mt-4 font-body">
+            © {new Date().getFullYear()} Observatório Sistêmico. Todos os direitos reservados.
           </p>
         </div>
       </footer>
