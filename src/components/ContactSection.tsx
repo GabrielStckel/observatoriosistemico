@@ -15,11 +15,7 @@ const ContactSection = () => {
             href="https://wa.me/5553999999999"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-4 rounded-full font-body font-medium text-sm text-white transition-all duration-300 hover:scale-105 hover:shadow-lg"
-            style={{
-              background: "linear-gradient(135deg, #25D366, #128C7E)",
-              boxShadow: "0 4px 15px rgba(37, 211, 102, 0.3)",
-            }}
+            className="inline-flex items-center gap-3 px-8 py-4 rounded-full font-body font-medium text-sm text-primary-foreground transition-all duration-300 hover:scale-105 hover:shadow-lg bg-secondary"
           >
             <MessageCircle size={20} fill="white" stroke="none" />
             Conversar pelo WhatsApp
