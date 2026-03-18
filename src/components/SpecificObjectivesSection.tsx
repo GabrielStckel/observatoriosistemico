@@ -20,18 +20,18 @@ const SpecificObjectivesSection = () => {
             return (
               <div
                 key={i}
-                className={`card-refined p-5 md:p-7 group relative overflow-hidden ${isLast ? "md:col-span-2 md:max-w-lg md:mx-auto" : ""}`}
+                className={`card-refined p-5 md:p-7 md:group relative overflow-hidden ${isLast ? "md:col-span-2 md:max-w-lg md:mx-auto" : ""}`}
               >
-                <div className="absolute top-0 left-0 right-0 h-[2px] bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                <div className="absolute top-0 left-0 right-0 h-[2px] bg-accent scale-x-0 md:group-hover:scale-x-100 transition-transform duration-500 origin-left hidden md:block" />
 
                 <div className="flex gap-3 md:gap-4 items-start">
                   <span
-                    className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[11px] font-body font-semibold text-accent/70 group-hover:text-accent-foreground group-hover:bg-accent transition-all duration-300"
+                    className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-[11px] font-body font-semibold text-accent/70 md:group-hover:text-accent-foreground md:group-hover:bg-accent transition-all duration-300"
                     style={{ border: "1.5px solid hsl(220 86% 56% / 0.2)" }}
                   >
                     {i + 1}
                   </span>
-                  <p className="text-foreground text-[14px] leading-[1.8] font-body font-light">
+                  <p className="text-foreground text-[14px] leading-[1.8] font-body font-light text-justify">
                     {text}
                   </p>
                 </div>
