@@ -29,7 +29,7 @@ const ScheduleSection = () => {
               <span className="label-section text-[10px] block mb-2">
                 {item.month}
               </span>
-              <span className="text-foreground font-display text-base font-medium">
+              <span className="text-foreground font-body text-base font-semibold">
                 {item.dates}
               </span>
             </div>

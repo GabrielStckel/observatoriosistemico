@@ -21,7 +21,7 @@ const Index = () => {
 
       <footer className="section-white py-16 border-t border-border">
         <div className="container text-center">
-          <p className="font-display text-sm font-medium text-foreground tracking-wide">
+          <p className="font-body text-sm font-semibold text-foreground tracking-wide">
             Observatório Sistêmico
           </p>
           <p className="text-muted-foreground text-xs mt-2 font-body">

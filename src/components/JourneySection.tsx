@@ -16,7 +16,7 @@ const JourneySection = () => {
     <section className="section-white py-24 md:py-32">
       <div className="container max-w-3xl">
         <span className="label-section mb-3 block text-center">Do Funcionamento</span>
-        <p className="text-center text-foreground font-display text-lg md:text-xl mb-16">
+        <p className="text-center text-foreground font-body font-semibold text-lg md:text-xl mb-16">
           Encontros mensais ao vivo, presenciais e híbridos:
         </p>
 
