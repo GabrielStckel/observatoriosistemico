@@ -6,7 +6,7 @@ const HybridSection = () => {
         <div className="h-px w-8 bg-accent/30 mx-auto mb-12" />
 
         <div className="card-refined p-8 md:p-10">
-          <h3 className="font-display text-lg font-medium text-foreground mb-5">
+          <h3 className="font-body text-lg font-semibold text-foreground mb-5">
             O Observatório na versão híbrida.
           </h3>
           <p className="text-foreground text-[15px] leading-[1.85] font-body font-light">

@@ -16,7 +16,7 @@ const ScheduleSection = () => {
     <section className="section-muted py-24 md:py-32">
       <div className="container max-w-3xl">
         <span className="label-section mb-3 block text-center">Do Cronograma</span>
-        <p className="text-center text-foreground font-display text-lg md:text-xl mb-16">
+        <p className="text-center text-foreground font-body font-semibold text-lg md:text-xl mb-16">
           Cronograma de encontros:
         </p>
 
@@ -29,7 +29,7 @@ const ScheduleSection = () => {
               <span className="label-section text-[10px] block mb-2">
                 {item.month}
               </span>
-              <span className="text-foreground font-display text-base font-medium">
+              <span className="text-foreground font-body text-base font-semibold">
                 {item.dates}
               </span>
             </div>

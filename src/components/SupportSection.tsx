@@ -3,7 +3,7 @@ const SupportSection = () => {
     <section className="section-muted py-24 md:py-32">
       <div className="container max-w-2xl">
         <div className="card-refined p-8 md:p-10">
-          <h2 className="font-display text-lg font-medium text-foreground mb-5">
+          <h2 className="font-body text-lg font-semibold text-foreground mb-5">
             Hotseat e Clube de Estudos
           </h2>
           <div className="space-y-4 font-body font-light text-[15px] leading-[1.85]">
