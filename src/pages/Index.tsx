@@ -1,16 +1,37 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import HeroSection from "@/components/HeroSection";
+import ObjectiveSection from "@/components/ObjectiveSection";
+import SpecificObjectivesSection from "@/components/SpecificObjectivesSection";
+import JourneySection from "@/components/JourneySection";
+import SupportSection from "@/components/SupportSection";
+import LaboratorySection from "@/components/LaboratorySection";
+import HybridSection from "@/components/HybridSection";
+import ScheduleSection from "@/components/ScheduleSection";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
-    </div>
+    <main className="min-h-screen">
+      <HeroSection />
+      <ObjectiveSection />
+      <SpecificObjectivesSection />
+      <JourneySection />
+      <SupportSection />
+      <LaboratorySection />
+      <HybridSection />
+      <ScheduleSection />
+
+      {/* Footer */}
+      <footer className="section-white py-12 border-t border-border">
+        <div className="container text-center">
+          <p className="font-display font-semibold text-foreground text-lg mb-2">
+            Observatório Sistêmico
+          </p>
+          <p className="text-muted-foreground text-sm">
+            Ciência Sistêmica · Constelação · Comunidade
+          </p>
+        </div>
+      </footer>
+    </main>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
