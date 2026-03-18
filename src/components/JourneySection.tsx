@@ -57,7 +57,13 @@ const JourneySection = () => {
 
                   {/* Content — uniform styling */}
                   <div className="flex-1 min-w-0">
-                    <span className="block mb-0.5 font-body uppercase tracking-[0.15em] text-[10px] text-accent/60">
+                    <span
+                      className="block mb-0.5 font-body uppercase tracking-[0.15em] text-[10px] transition-colors duration-300"
+                      style={{
+                        color: `hsl(220 86% ${56 - progress * 16}%)`,
+                        opacity: 0.45 + progress * 0.55,
+                      }}
+                    >
                       {item.month}
                     </span>
                     <h3 className="font-body text-[14px] font-semibold text-foreground mb-0.5">
