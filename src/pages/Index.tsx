@@ -22,21 +22,20 @@ const Index = () => {
       <ScheduleSection />
       <ContactSection />
 
-      <footer className="gradient-hero py-10">
-        <div className="container text-center">
-          <p className="font-body text-sm font-semibold text-primary-foreground tracking-wide">
+      <footer className="gradient-hero py-8">
+        <div className="container max-w-2xl flex flex-col items-center gap-4">
+          <p className="font-display text-base font-medium text-primary-foreground tracking-wide">
             Observatório Sistêmico
           </p>
           <a
             href="https://www.instagram.com/jonas_peress/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 mt-4 text-primary-foreground/70 hover:text-primary-foreground transition-colors"
+            className="text-primary-foreground/60 hover:text-primary-foreground transition-colors"
           >
-            <Instagram size={18} />
-            <span className="text-sm font-body">@jonas_peress</span>
+            <Instagram size={22} />
           </a>
-          <p className="text-primary-foreground/50 text-xs mt-4 font-body">
+          <p className="text-primary-foreground/40 text-xs font-body">
             © {new Date().getFullYear()} Observatório Sistêmico. Todos os direitos reservados.
           </p>
         </div>
