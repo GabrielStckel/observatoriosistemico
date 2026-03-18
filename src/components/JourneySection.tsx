@@ -18,11 +18,12 @@ const JourneySection = () => {
     <section className="section-white py-16 md:py-32 overflow-hidden">
       <div className="container max-w-3xl">
         <SectionTitle
-          label="Do Funcionamento"
+          label="Funcionamento"
           subtitle="Encontros mensais ao vivo, presenciais e híbridos:"
         />
 
         <div className="relative mt-8">
+          {/* Progressive bar — only visual element that intensifies */}
           <div
             className="absolute left-[11px] md:left-[19px] top-0 bottom-0 w-[2px] rounded-full"
             style={{
@@ -40,6 +41,7 @@ const JourneySection = () => {
 
               return (
                 <div key={i} className="relative flex gap-4 md:gap-7 pb-8 last:pb-0 group">
+                  {/* Dot — progressive */}
                   <div className="relative flex-shrink-0 w-[24px] md:w-[40px] flex justify-center pt-[6px]">
                     <div
                       className="rounded-full transition-transform duration-300 group-hover:scale-125"
@@ -53,31 +55,15 @@ const JourneySection = () => {
                     />
                   </div>
 
+                  {/* Content — uniform styling */}
                   <div className="flex-1 min-w-0">
-                    <span
-                      className="block mb-0.5 font-body uppercase tracking-[0.15em]"
-                      style={{
-                        fontSize: "10px",
-                        color: `hsl(220 86% ${56 - progress * 16}%)`,
-                        opacity: 0.5 + progress * 0.5,
-                      }}
-                    >
+                    <span className="block mb-0.5 font-body uppercase tracking-[0.15em] text-[10px] text-accent/60">
                       {item.month}
                     </span>
-                    <h3
-                      className="font-body mb-0.5 transition-colors duration-300"
-                      style={{
-                        fontSize: `${13 + progress * 3}px`,
-                        fontWeight: progress > 0.6 ? 700 : progress > 0.3 ? 600 : 500,
-                        color: `hsl(214 ${40 + progress * 30}% ${14 + (1 - progress) * 10}%)`,
-                      }}
-                    >
+                    <h3 className="font-body text-[14px] font-semibold text-foreground mb-0.5">
                       {item.theme}
                     </h3>
-                    <p
-                      className="text-muted-foreground leading-relaxed font-light"
-                      style={{ fontSize: `${12.5 + progress * 1.5}px` }}
-                    >
+                    <p className="text-muted-foreground text-[13px] leading-relaxed font-light">
                       {item.desc}
                     </p>
                   </div>
