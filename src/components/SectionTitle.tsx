@@ -6,7 +6,7 @@ interface SectionTitleProps {
 
 const SectionTitle = ({ label, subtitle, light = false }: SectionTitleProps) => {
   return (
-    <div className="mb-8 px-1">
+    <div className="mb-8 px-1 text-center">
       <h2
         className={`font-display text-2xl md:text-3xl font-medium tracking-tight ${
           light ? "text-primary-foreground" : "text-foreground"
