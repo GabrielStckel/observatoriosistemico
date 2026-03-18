@@ -1,35 +1,37 @@
+import SectionTitle from "./SectionTitle";
+
 const schedule = [
-  { month: "Mar", dates: "14–15" },
-  { month: "Abr", dates: "18–19" },
-  { month: "Mai", dates: "23–24" },
-  { month: "Jun", dates: "20–21" },
-  { month: "Jul", dates: "18–19" },
-  { month: "Ago", dates: "15–16" },
-  { month: "Set", dates: "05–06" },
-  { month: "Out", dates: "17–18" },
-  { month: "Nov", dates: "21–22" },
-  { month: "Dez", dates: "05–06" },
+  { month: "Março", dates: "14 e 15/03" },
+  { month: "Abril", dates: "18 e 19/04" },
+  { month: "Maio", dates: "23 e 24/05" },
+  { month: "Junho", dates: "20 e 21/06" },
+  { month: "Julho", dates: "18 e 19/07" },
+  { month: "Agosto", dates: "15 e 16/08" },
+  { month: "Setembro", dates: "05 e 06/09" },
+  { month: "Outubro", dates: "17 e 18/10" },
+  { month: "Novembro", dates: "21 e 22/11" },
+  { month: "Dezembro", dates: "05 e 06/12" },
 ];
 
 const ScheduleSection = () => {
   return (
-    <section className="section-muted py-24 md:py-32">
+    <section className="section-muted py-16 md:py-32">
       <div className="container max-w-3xl">
-        <span className="label-section mb-3 block text-center">Do Cronograma</span>
-        <p className="text-center text-foreground font-body font-semibold text-lg md:text-xl mb-16">
-          Cronograma de encontros:
-        </p>
+        <SectionTitle
+          label="Do Cronograma"
+          subtitle="Cronograma de encontros:"
+        />
 
-        <div className="grid grid-cols-5 gap-px bg-border rounded overflow-hidden">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
           {schedule.map((item, i) => (
             <div
               key={i}
-              className="bg-surface p-5 text-center hover:bg-muted/50 transition-colors duration-200"
+              className="card-refined p-4 text-center group"
             >
-              <span className="label-section text-[10px] block mb-2">
+              <span className="block text-[10px] font-body font-semibold uppercase tracking-[0.12em] text-accent/60 group-hover:text-accent transition-colors mb-1">
                 {item.month}
               </span>
-              <span className="text-foreground font-body text-base font-semibold">
+              <span className="text-foreground font-body text-sm font-semibold">
                 {item.dates}
               </span>
             </div>

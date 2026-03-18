@@ -1,12 +1,12 @@
+import SectionTitle from "./SectionTitle";
+
 const SupportSection = () => {
   return (
-    <section className="section-muted py-24 md:py-32">
+    <section className="section-muted py-16 md:py-32">
       <div className="container max-w-2xl">
-        <div className="card-refined p-8 md:p-10">
-          <h2 className="font-body text-lg font-semibold text-foreground mb-5">
-            Hotseat e Clube de Estudos
-          </h2>
-          <div className="space-y-4 font-body font-light text-[15px] leading-[1.85]">
+        <SectionTitle label="Hotseat e Clube de Estudos" />
+        <div className="card-refined p-5 md:p-10">
+          <div className="space-y-4 font-body font-light text-[14px] md:text-[15px] leading-[1.85]">
             <p className="text-foreground">
               Encontros em grupo (online) de estudo guiado da literatura sistêmica, bem como discussão e elucidação de casos de atendimentos e processos internos ocorridos durante a trajetória dos membros.
             </p>

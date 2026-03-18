@@ -1,3 +1,5 @@
+import SectionTitle from "./SectionTitle";
+
 const months = [
   { month: "Março", theme: "Pertencimento", desc: "comunicação, compreensão e conexão com a vida;" },
   { month: "Abril", theme: "A ordem", desc: "a indisponibilidade pela ausência do limite. O bloqueio às soluções como fruto da indisponibilidade;" },
@@ -13,17 +15,16 @@ const months = [
 
 const JourneySection = () => {
   return (
-    <section className="section-white py-24 md:py-32 overflow-hidden">
+    <section className="section-white py-16 md:py-32 overflow-hidden">
       <div className="container max-w-3xl">
-        <span className="label-section mb-3 block text-center">Do Funcionamento</span>
-        <p className="text-center text-foreground font-body font-semibold text-lg md:text-xl mb-20">
-          Encontros mensais ao vivo, presenciais e híbridos:
-        </p>
+        <SectionTitle
+          label="Do Funcionamento"
+          subtitle="Encontros mensais ao vivo, presenciais e híbridos:"
+        />
 
-        <div className="relative">
-          {/* Gradient progress line */}
+        <div className="relative mt-8">
           <div
-            className="absolute left-[15px] md:left-[19px] top-0 bottom-0 w-[2px] rounded-full"
+            className="absolute left-[11px] md:left-[19px] top-0 bottom-0 w-[2px] rounded-full"
             style={{
               background: "linear-gradient(180deg, hsl(214 20% 88%) 0%, hsl(220 86% 56% / 0.4) 30%, hsl(220 86% 56%) 70%, hsl(220 70% 45%) 100%)",
             }}
@@ -31,18 +32,15 @@ const JourneySection = () => {
 
           <div className="space-y-0">
             {months.map((item, i) => {
-              // Progress: 0 to 1
               const progress = i / (months.length - 1);
-              // Dot grows from 8px to 14px, opacity increases, color intensifies
-              const dotSize = 8 + progress * 8;
+              const dotSize = 6 + progress * 8;
               const bgOpacity = 0.12 + progress * 0.88;
               const borderWidth = progress > 0.7 ? 0 : 2;
               const glowSize = progress * 20;
 
               return (
-                <div key={i} className="relative flex gap-5 md:gap-7 pb-10 last:pb-0 group">
-                  {/* Progressive dot */}
-                  <div className="relative flex-shrink-0 w-[32px] md:w-[40px] flex justify-center pt-1">
+                <div key={i} className="relative flex gap-4 md:gap-7 pb-8 last:pb-0 group">
+                  <div className="relative flex-shrink-0 w-[24px] md:w-[40px] flex justify-center pt-[6px]">
                     <div
                       className="rounded-full transition-transform duration-300 group-hover:scale-125"
                       style={{
@@ -55,10 +53,9 @@ const JourneySection = () => {
                     />
                   </div>
 
-                  {/* Content — progressively bolder */}
                   <div className="flex-1 min-w-0">
                     <span
-                      className="block mb-1 font-body uppercase tracking-[0.15em]"
+                      className="block mb-0.5 font-body uppercase tracking-[0.15em]"
                       style={{
                         fontSize: "10px",
                         color: `hsl(220 86% ${56 - progress * 16}%)`,
@@ -68,9 +65,9 @@ const JourneySection = () => {
                       {item.month}
                     </span>
                     <h3
-                      className="font-body mb-1 transition-colors duration-300"
+                      className="font-body mb-0.5 transition-colors duration-300"
                       style={{
-                        fontSize: `${14 + progress * 4}px`,
+                        fontSize: `${13 + progress * 3}px`,
                         fontWeight: progress > 0.6 ? 700 : progress > 0.3 ? 600 : 500,
                         color: `hsl(214 ${40 + progress * 30}% ${14 + (1 - progress) * 10}%)`,
                       }}
@@ -79,9 +76,7 @@ const JourneySection = () => {
                     </h3>
                     <p
                       className="text-muted-foreground leading-relaxed font-light"
-                      style={{
-                        fontSize: `${13 + progress * 1.5}px`,
-                      }}
+                      style={{ fontSize: `${12.5 + progress * 1.5}px` }}
                     >
                       {item.desc}
                     </p>
