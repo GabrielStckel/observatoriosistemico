@@ -1,17 +1,13 @@
-import { FlaskConical } from "lucide-react";
-
 const LaboratorySection = () => {
   return (
-    <section className="py-20 md:py-28" style={{ background: "linear-gradient(135deg, hsl(210 33% 97%), hsl(220 86% 56% / 0.06))" }}>
-      <div className="container max-w-3xl">
-        <div className="border-accent-left pl-8 md:pl-12">
-          <div className="flex items-center gap-3 mb-6">
-            <FlaskConical className="w-6 h-6 text-accent" />
-            <h2 className="font-display font-bold text-xl text-foreground">
-              Laboratório Sistêmico
-            </h2>
-          </div>
-          <p className="text-foreground leading-relaxed text-lg">
+    <section className="gradient-hero py-24 md:py-32">
+      <div className="container max-w-2xl">
+        <div className="border-l-2 border-accent/40 pl-8">
+          <span className="label-section text-accent/70 mb-4 block">Destaque</span>
+          <h2 className="font-display text-xl md:text-2xl font-medium text-primary-foreground mb-5">
+            Laboratório Sistêmico
+          </h2>
+          <p className="text-primary-foreground/70 text-[15px] leading-[1.85] font-body font-light">
             Centro integrado de atuação dos consteladores do Mastermind onde serão formados grupos mensais de atendimento à população necessitada (critérios a serem definidos dentro do campo no primeiro encontro do Mastermind) para estágio dos formados e supervisão dos formandos.
           </p>
         </div>

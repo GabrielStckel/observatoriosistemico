@@ -13,52 +13,36 @@ const months = [
 
 const JourneySection = () => {
   return (
-    <section className="section-white py-20 md:py-28">
-      <div className="container max-w-4xl">
-        <h2 className="text-sm font-display font-semibold tracking-[0.2em] uppercase text-accent mb-4 text-center">
-          Do Funcionamento
-        </h2>
-        <p className="text-center text-foreground font-display font-semibold text-lg mb-14">
+    <section className="section-white py-24 md:py-32">
+      <div className="container max-w-3xl">
+        <span className="label-section mb-3 block text-center">Do Funcionamento</span>
+        <p className="text-center text-foreground font-display text-lg md:text-xl mb-16">
           Encontros mensais ao vivo, presenciais e híbridos:
         </p>
 
         <div className="relative">
           {/* Timeline spine */}
-          <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px timeline-line md:-translate-x-px" />
+          <div className="absolute left-[7px] top-2 bottom-2 w-px timeline-line" />
 
-          <div className="space-y-8">
-            {months.map((item, i) => {
-              const isLeft = i % 2 === 0;
-              return (
-                <div
-                  key={i}
-                  className={`relative flex items-start gap-6 md:gap-0 ${
-                    isLeft ? "md:flex-row" : "md:flex-row-reverse"
-                  }`}
-                >
-                  {/* Dot */}
-                  <div className="absolute left-6 md:left-1/2 w-3 h-3 rounded-full bg-accent border-2 border-surface -translate-x-1.5 mt-2 z-10 shadow-sm shadow-accent/30" />
+          <div className="space-y-10">
+            {months.map((item, i) => (
+              <div key={i} className="relative pl-10 group">
+                {/* Dot */}
+                <div className="absolute left-0 top-[6px] w-[15px] h-[15px] rounded-full border-2 border-border bg-surface group-hover:border-accent transition-colors duration-300" />
 
-                  {/* Content */}
-                  <div className={`ml-14 md:ml-0 md:w-1/2 ${isLeft ? "md:pr-12 md:text-right" : "md:pl-12"}`}>
-                    <div className="card-elevated p-6">
-                      <span className="text-xs font-display font-semibold tracking-[0.15em] uppercase text-accent">
-                        {item.month}
-                      </span>
-                      <h3 className="text-foreground font-display font-semibold mt-1 mb-1">
-                        {item.theme}
-                      </h3>
-                      <p className="text-muted-foreground text-sm leading-relaxed">
-                        {item.desc}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Spacer for other side */}
-                  <div className="hidden md:block md:w-1/2" />
+                <div>
+                  <span className="label-section text-[10px] block mb-1">
+                    {item.month}
+                  </span>
+                  <h3 className="text-foreground font-display text-base font-medium mb-1">
+                    {item.theme}
+                  </h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed font-light">
+                    {item.desc}
+                  </p>
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </div>
         </div>
       </div>
