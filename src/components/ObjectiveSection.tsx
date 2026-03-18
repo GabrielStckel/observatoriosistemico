@@ -2,7 +2,7 @@ import SectionTitle from "./SectionTitle";
 
 const ObjectiveSection = () => {
   return (
-    <section className="section-white py-16 md:py-32">
+    <section className="section-white py-10 md:py-16">
       <div className="container max-w-2xl">
         <SectionTitle label="Objetivo" />
         <div className="border-accent-left pl-5 md:pl-8">

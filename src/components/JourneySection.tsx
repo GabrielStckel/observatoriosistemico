@@ -15,7 +15,7 @@ const months = [
 
 const JourneySection = () => {
   return (
-    <section className="section-white py-16 md:py-32 overflow-hidden">
+    <section className="section-white py-10 md:py-16 overflow-hidden">
       <div className="container max-w-3xl">
         <SectionTitle
           label="Funcionamento"

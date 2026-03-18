@@ -2,7 +2,7 @@ import SectionTitle from "./SectionTitle";
 
 const HybridSection = () => {
   return (
-    <section className="section-white py-16 md:py-32">
+    <section className="section-white py-10 md:py-16">
       <div className="container max-w-2xl">
         <SectionTitle label="O Observatório na versão híbrida" />
         <div className="card-refined p-5 md:p-10">

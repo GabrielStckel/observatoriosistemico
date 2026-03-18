@@ -2,7 +2,7 @@ import SectionTitle from "./SectionTitle";
 
 const SupportSection = () => {
   return (
-    <section className="section-muted py-16 md:py-32">
+    <section className="section-muted py-10 md:py-16">
       <div className="container max-w-2xl">
         <SectionTitle label="Hotseat e Clube de Estudos" />
         <div className="card-refined p-5 md:p-10">
