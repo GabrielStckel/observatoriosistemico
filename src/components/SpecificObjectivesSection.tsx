@@ -9,20 +9,39 @@ const objectives = [
 const SpecificObjectivesSection = () => {
   return (
     <section className="section-muted py-24 md:py-32">
-      <div className="container max-w-3xl">
-        <span className="label-section mb-12 block text-center">Objetivos específicos</span>
+      <div className="container max-w-4xl">
+        {/* Title with decorative lines */}
+        <div className="flex items-center gap-4 mb-16 justify-center">
+          <div className="h-px flex-1 max-w-[60px] bg-accent/25" />
+          <span className="label-section text-center">Objetivos específicos</span>
+          <div className="h-px flex-1 max-w-[60px] bg-accent/25" />
+        </div>
 
-        <div className="space-y-0 divide-y divide-border">
-          {objectives.map((text, i) => (
-            <div key={i} className="py-7 first:pt-0 last:pb-0 flex gap-5">
-              <span className="text-accent font-body text-lg font-semibold leading-none mt-0.5 select-none">
-                {i + 1}
-              </span>
-              <p className="text-foreground text-[15px] leading-[1.85] font-body font-light">
-                {text}
-              </p>
-            </div>
-          ))}
+        <div className="grid md:grid-cols-2 gap-5">
+          {objectives.map((text, i) => {
+            const isLast = i === objectives.length - 1;
+            return (
+              <div
+                key={i}
+                className={`card-refined p-7 group relative overflow-hidden ${isLast ? "md:col-span-2 md:max-w-lg md:mx-auto" : ""}`}
+              >
+                {/* Accent top bar that reveals on hover */}
+                <div className="absolute top-0 left-0 right-0 h-[2px] bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+
+                <div className="flex gap-4 items-start">
+                  <span
+                    className="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-body font-semibold text-accent/70 group-hover:text-accent-foreground group-hover:bg-accent transition-all duration-300"
+                    style={{ border: "1.5px solid hsl(220 86% 56% / 0.2)" }}
+                  >
+                    {i + 1}
+                  </span>
+                  <p className="text-foreground text-[14px] leading-[1.85] font-body font-light pt-0.5">
+                    {text}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
