@@ -1,5 +1,5 @@
 import SectionTitle from "./SectionTitle";
-import { Phone } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 
 const ContactSection = () => {
   return (
@@ -15,10 +15,14 @@ const ContactSection = () => {
             href="https://wa.me/5553999999999"
             target="_blank"
             rel="noopener noreferrer"
-            className="card-refined p-4 px-6 flex items-center gap-3 hover:border-accent/40 transition-colors"
+            className="inline-flex items-center gap-3 px-8 py-4 rounded-full font-body font-medium text-sm text-white transition-all duration-300 hover:scale-105 hover:shadow-lg"
+            style={{
+              background: "linear-gradient(135deg, #25D366, #128C7E)",
+              boxShadow: "0 4px 15px rgba(37, 211, 102, 0.3)",
+            }}
           >
-            <Phone size={20} className="text-accent" />
-            <span className="text-foreground text-sm font-body">WhatsApp</span>
+            <MessageCircle size={20} fill="white" stroke="none" />
+            Conversar pelo WhatsApp
           </a>
         </div>
       </div>
