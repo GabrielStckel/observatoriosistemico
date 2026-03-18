@@ -60,8 +60,8 @@ const JourneySection = () => {
                     <span
                       className="block mb-0.5 font-body uppercase tracking-[0.15em] text-[10px] transition-colors duration-300"
                       style={{
-                        color: `hsl(220 86% ${56 - progress * 16}%)`,
-                        opacity: 0.45 + progress * 0.55,
+                        color: `hsl(220 86% ${50 - progress * 12}%)`,
+                        opacity: 0.65 + progress * 0.35,
                       }}
                     >
                       {item.month}
