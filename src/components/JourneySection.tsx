@@ -64,6 +64,8 @@ const JourneySection = () => {
                         opacity: 0.45 + progress * 0.55,
                       }}
                     >
+                      {item.month}
+                    </span>
                     <h3 className="font-body text-[14px] font-semibold text-foreground mb-0.5">
                       {item.theme}
                     </h3>
