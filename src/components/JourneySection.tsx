@@ -34,7 +34,7 @@ const JourneySection = () => {
                   <span className="label-section text-[10px] block mb-1">
                     {item.month}
                   </span>
-                  <h3 className="text-foreground font-display text-base font-medium mb-1">
+                  <h3 className="text-foreground font-body text-base font-semibold mb-1">
                     {item.theme}
                   </h3>
                   <p className="text-muted-foreground text-sm leading-relaxed font-light">

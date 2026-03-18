@@ -15,7 +15,7 @@ const SpecificObjectivesSection = () => {
         <div className="space-y-0 divide-y divide-border">
           {objectives.map((text, i) => (
             <div key={i} className="py-7 first:pt-0 last:pb-0 flex gap-5">
-              <span className="text-accent font-display text-lg font-medium leading-none mt-0.5 select-none">
+              <span className="text-accent font-body text-lg font-semibold leading-none mt-0.5 select-none">
                 {i + 1}
               </span>
               <p className="text-foreground text-[15px] leading-[1.85] font-body font-light">
