@@ -1,37 +1,35 @@
 const schedule = [
-  { month: "Março", dates: "14 e 15/03" },
-  { month: "Abril", dates: "18 e 19/04" },
-  { month: "Maio", dates: "23 e 24/05" },
-  { month: "Junho", dates: "20 e 21/06" },
-  { month: "Julho", dates: "18 e 19/07" },
-  { month: "Agosto", dates: "15 e 16/08" },
-  { month: "Setembro", dates: "05 e 06/09" },
-  { month: "Outubro", dates: "17 e 18/10" },
-  { month: "Novembro", dates: "21 e 22/11" },
-  { month: "Dezembro", dates: "05 e 06/12" },
+  { month: "Mar", dates: "14–15" },
+  { month: "Abr", dates: "18–19" },
+  { month: "Mai", dates: "23–24" },
+  { month: "Jun", dates: "20–21" },
+  { month: "Jul", dates: "18–19" },
+  { month: "Ago", dates: "15–16" },
+  { month: "Set", dates: "05–06" },
+  { month: "Out", dates: "17–18" },
+  { month: "Nov", dates: "21–22" },
+  { month: "Dez", dates: "05–06" },
 ];
 
 const ScheduleSection = () => {
   return (
-    <section className="section-blue py-20 md:py-28">
-      <div className="container max-w-5xl">
-        <h2 className="text-sm font-display font-semibold tracking-[0.2em] uppercase text-accent mb-4 text-center">
-          Do Cronograma
-        </h2>
-        <p className="text-center text-foreground font-display font-semibold text-lg mb-14">
+    <section className="section-muted py-24 md:py-32">
+      <div className="container max-w-3xl">
+        <span className="label-section mb-3 block text-center">Do Cronograma</span>
+        <p className="text-center text-foreground font-display text-lg md:text-xl mb-16">
           Cronograma de encontros:
         </p>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+        <div className="grid grid-cols-5 gap-px bg-border rounded overflow-hidden">
           {schedule.map((item, i) => (
             <div
               key={i}
-              className="card-elevated p-5 text-center group"
+              className="bg-surface p-5 text-center hover:bg-muted/50 transition-colors duration-200"
             >
-              <span className="text-xs font-display font-semibold tracking-[0.15em] uppercase text-accent block mb-2">
+              <span className="label-section text-[10px] block mb-2">
                 {item.month}
               </span>
-              <span className="text-foreground font-display font-bold text-lg">
+              <span className="text-foreground font-display text-base font-medium">
                 {item.dates}
               </span>
             </div>

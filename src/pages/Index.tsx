@@ -19,13 +19,12 @@ const Index = () => {
       <HybridSection />
       <ScheduleSection />
 
-      {/* Footer */}
-      <footer className="section-white py-12 border-t border-border">
+      <footer className="section-white py-16 border-t border-border">
         <div className="container text-center">
-          <p className="font-display font-semibold text-foreground text-lg mb-2">
+          <p className="font-display text-sm font-medium text-foreground tracking-wide">
             Observatório Sistêmico
           </p>
-          <p className="text-muted-foreground text-sm">
+          <p className="text-muted-foreground text-xs mt-2 font-body">
             Ciência Sistêmica · Constelação · Comunidade
           </p>
         </div>

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,7 +6,7 @@
 
 @layer base {
   :root {
-    --background: 210 33% 97%;
+    --background: 210 25% 97%;
     --foreground: 214 67% 14%;
 
     --card: 0 0% 100%;
@@ -16,13 +16,13 @@
     --popover-foreground: 214 67% 14%;
 
     --primary: 214 67% 14%;
-    --primary-foreground: 210 33% 97%;
+    --primary-foreground: 210 25% 97%;
 
     --secondary: 213 52% 24%;
-    --secondary-foreground: 210 33% 97%;
+    --secondary-foreground: 210 25% 97%;
 
-    --muted: 210 33% 95%;
-    --muted-foreground: 213 30% 40%;
+    --muted: 210 20% 94%;
+    --muted-foreground: 213 20% 45%;
 
     --accent: 220 86% 56%;
     --accent-foreground: 0 0% 100%;
@@ -30,14 +30,13 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
+    --border: 214 20% 90%;
+    --input: 214 20% 90%;
     --ring: 220 86% 56%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
     --surface: 0 0% 100%;
-    --surface-blue: 210 33% 97%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -61,6 +60,8 @@
 
   body {
     @apply bg-background text-foreground font-body antialiased;
+    font-feature-settings: "cv11", "ss01";
+    -webkit-font-smoothing: antialiased;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -71,51 +72,42 @@
 @layer utilities {
   .gradient-hero {
     background: linear-gradient(
-      160deg,
-      hsl(210 33% 97%) 0%,
-      hsl(220 86% 56% / 0.08) 40%,
-      hsl(213 52% 24% / 0.06) 100%
+      175deg,
+      hsl(214 67% 14%) 0%,
+      hsl(213 52% 24%) 50%,
+      hsl(213 45% 30%) 100%
     );
-  }
-
-  .gradient-mesh {
-    background:
-      radial-gradient(ellipse at 20% 50%, hsl(220 86% 56% / 0.06) 0%, transparent 50%),
-      radial-gradient(ellipse at 80% 20%, hsl(213 52% 24% / 0.04) 0%, transparent 50%),
-      radial-gradient(ellipse at 50% 80%, hsl(220 86% 56% / 0.05) 0%, transparent 50%);
   }
 
   .section-white {
     @apply bg-surface;
   }
 
-  .section-blue {
-    @apply bg-background;
+  .section-muted {
+    background: hsl(210 25% 97%);
   }
 
-  .card-elevated {
-    @apply bg-surface rounded-xl border border-border;
-    box-shadow: 0 4px 24px -4px hsl(214 67% 14% / 0.06);
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  .card-refined {
+    @apply bg-surface border border-border;
+    border-radius: 4px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
   }
 
-  .card-elevated:hover {
-    box-shadow: 0 8px 32px -4px hsl(220 86% 56% / 0.12);
-    transform: translateY(-2px);
+  .card-refined:hover {
+    border-color: hsl(220 86% 56% / 0.3);
+    box-shadow: 0 1px 12px -2px hsl(214 67% 14% / 0.08);
   }
 
   .border-accent-left {
-    border-left: 4px solid hsl(220 86% 56%);
+    border-left: 3px solid hsl(220 86% 56%);
   }
 
   .timeline-line {
-    background: linear-gradient(180deg, hsl(220 86% 56% / 0.2) 0%, hsl(220 86% 56%) 50%, hsl(220 86% 56% / 0.2) 100%);
+    background: hsl(214 20% 88%);
   }
 
-  .text-gradient {
-    background: linear-gradient(135deg, hsl(214 67% 14%), hsl(220 86% 56%));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  .label-section {
+    @apply text-xs font-body font-semibold tracking-[0.15em] uppercase text-accent;
+    letter-spacing: 0.18em;
   }
 }
