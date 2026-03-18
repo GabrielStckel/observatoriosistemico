@@ -17,10 +17,7 @@ const ScheduleSection = () => {
   return (
     <section className="section-muted py-16 md:py-32">
       <div className="container max-w-3xl">
-        <SectionTitle
-          label="Do Cronograma"
-          subtitle="Cronograma de encontros:"
-        />
+        <SectionTitle label="Cronograma de encontros" />
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
           {schedule.map((item, i) => (

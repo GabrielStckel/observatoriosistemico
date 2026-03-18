@@ -4,10 +4,7 @@ const HybridSection = () => {
   return (
     <section className="section-white py-16 md:py-32">
       <div className="container max-w-2xl">
-        <SectionTitle
-          label="Do sistema híbrido"
-          subtitle="O Observatório na versão híbrida."
-        />
+        <SectionTitle label="O Observatório na versão híbrida" />
         <div className="card-refined p-5 md:p-10">
           <p className="text-foreground text-[14px] md:text-[15px] leading-[1.85] font-body font-light">
             O ano III do Observatório trará a possibilidade de participação à distância dos encontros. Os encontros serão transmitidos ao vivo, possibilitando que os membros de fora de Rio Grande possam assistir e interagir. Ainda, todos os encontros ficarão gravados para posterior revisão por parte de todos.
