@@ -45,7 +45,7 @@ const Index = () => {
           >
             <Instagram size={22} />
           </a>
-          <p className="text-primary-foreground/40 text-xs font-body">
+          <p className="text-primary-foreground/40 text-xs font-body text-center" style={{ hyphens: 'none' }}>
             © {new Date().getFullYear()} Observatório Sistêmico. Todos os direitos reservados.
           </p>
         </div>
