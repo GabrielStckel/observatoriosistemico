@@ -120,3 +120,18 @@
     letter-spacing: 0.18em;
   }
 }
+
+@keyframes drift-down-1 {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(calc(65vh + 100%)); }
+}
+
+@keyframes drift-down-2 {
+  0% { transform: translateY(0) translateX(0); }
+  100% { transform: translateY(calc(65vh + 100%)) translateX(15px); }
+}
+
+@keyframes drift-down-3 {
+  0% { transform: translateY(0) translateX(0); }
+  100% { transform: translateY(calc(65vh + 100%)) translateX(-10px); }
+}
