@@ -67,18 +67,18 @@ const ScheduleSection = () => {
           {schedule.map((item, i) => (
             <div
               key={i}
-              className="card-refined p-4 text-center group relative"
+              className="card-refined p-4 text-center group relative flex flex-col items-center"
             >
               <span className="block text-[10px] font-body font-semibold uppercase tracking-[0.12em] text-accent/60 group-hover:text-accent transition-colors mb-1">
                 {item.month}
               </span>
-              <span className="text-foreground font-body text-sm font-semibold">
+              <span className="block text-foreground font-body text-sm font-semibold">
                 {item.dates}
               </span>
 
               <button
                 onClick={() => setOpenMenu(openMenu === i ? null : i)}
-                className="mt-2 inline-flex items-center gap-1 text-[10px] font-body text-muted-foreground hover:text-accent transition-colors mx-auto"
+                className="mt-2 flex items-center gap-1 text-[10px] font-body text-muted-foreground hover:text-accent transition-colors"
                 aria-label={`Adicionar ${item.month} à agenda`}
               >
                 <CalendarPlus size={13} />
