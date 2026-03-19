@@ -31,26 +31,44 @@ function toGoogleCalendarUrl(item: typeof schedule[0]) {
 }
 
 function downloadICS(item: typeof schedule[0]) {
-  const startDate = item.start.replace(/-/g, "");
-  const endDate = item.end.replace(/-/g, "");
-  const ics = [
+  const ics = buildICSForItems([item]);
+  triggerDownload(ics, `observatorio-${item.month.toLowerCase()}.ics`);
+}
+
+function downloadAllICS() {
+  const ics = buildICSForItems(schedule);
+  triggerDownload(ics, "observatorio-todos-encontros.ics");
+}
+
+function buildICSForItems(items: typeof schedule) {
+  const events = items.map((item) => {
+    const startDate = item.start.replace(/-/g, "");
+    const endDate = item.end.replace(/-/g, "");
+    return [
+      "BEGIN:VEVENT",
+      `DTSTART;VALUE=DATE:${startDate}`,
+      `DTEND;VALUE=DATE:${endDate}`,
+      `SUMMARY:${eventTitle} - ${item.month}`,
+      `DESCRIPTION:${eventDescription}`,
+      "END:VEVENT",
+    ].join("\r\n");
+  });
+
+  return [
     "BEGIN:VCALENDAR",
     "VERSION:2.0",
     "PRODID:-//Observatorio Sistemico//PT",
-    "BEGIN:VEVENT",
-    `DTSTART;VALUE=DATE:${startDate}`,
-    `DTEND;VALUE=DATE:${endDate}`,
-    `SUMMARY:${eventTitle}`,
-    `DESCRIPTION:${eventDescription}`,
-    "END:VEVENT",
+    ...events,
     "END:VCALENDAR",
   ].join("\r\n");
+}
 
-  const blob = new Blob([ics], { type: "text/calendar;charset=utf-8" });
+function triggerDownload(content: string, filename: string) {
+  const blob = new Blob([content], { type: "text/calendar;charset=utf-8" });
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
-  a.download = `observatorio-${item.month.toLowerCase()}.ics`;
+  a.download = filename;
   a.click();
   URL.revokeObjectURL(url);
 }
@@ -115,6 +133,16 @@ const ScheduleSection = () => {
               )}
             </div>
           ))}
+        </div>
+
+        <div className="flex justify-center mt-6">
+          <button
+            onClick={downloadAllICS}
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs font-body font-medium text-accent border border-accent/20 hover:bg-accent hover:text-accent-foreground transition-all duration-300"
+          >
+            <CalendarPlus size={15} />
+            Adicionar todos à agenda
+          </button>
         </div>
       </div>
     </section>
