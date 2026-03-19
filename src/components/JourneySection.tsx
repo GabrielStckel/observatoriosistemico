@@ -2,8 +2,8 @@ import SectionTitle from "./SectionTitle";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const months = [
-  { month: "Março", theme: "Pertencimento", desc: "comunicação, compreensão e conexão com a vida;" },
-  { month: "Abril", theme: "A ordem", desc: "a indisponibilidade pela ausência do limite. O bloqueio às soluções como fruto da indisponibilidade;" },
+  { month: "Março", theme: "Pertencimento", desc: "comunicação, compreensão e conexão com a vida." },
+  { month: "Abril", theme: "A ordem", desc: "a indisponibilidade pela ausência do limite. O bloqueio às soluções como fruto da indisponibilidade." },
   { month: "Maio", theme: "Equilíbrio", desc: "o sentido da vida nas relações. A desistência." },
   { month: "Junho", theme: "Autoconstelação", desc: "os limites da percepção de si mesmo. A fusão entre observador e coisa observada. A arrogância. A responsabilidade como culpa." },
   { month: "Julho", theme: "A fenomenologia na sua essência", desc: "As raízes da postura sistêmica." },
