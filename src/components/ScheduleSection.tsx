@@ -145,6 +145,7 @@ const ScheduleSection = () => {
           </button>
         </div>
       </div>
+    </section>
   );
 };
 
