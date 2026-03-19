@@ -91,7 +91,7 @@ const ScheduleSection = () => {
                     className="fixed inset-0 z-10"
                     onClick={() => setOpenMenu(null)}
                   />
-                  <div className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 z-20 bg-surface border border-border rounded shadow-lg py-1 min-w-[160px]">
+                  <div className="absolute left-1/2 -translate-x-1/2 top-full mt-2 z-20 bg-surface border border-border rounded shadow-lg py-1 min-w-[160px]">
                     <a
                       href={toGoogleCalendarUrl(item)}
                       target="_blank"
