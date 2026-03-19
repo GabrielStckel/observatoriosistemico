@@ -1,26 +1,36 @@
+import { lazy, Suspense } from "react";
 import HeroSection from "@/components/HeroSection";
-import ObjectiveSection from "@/components/ObjectiveSection";
-import SpecificObjectivesSection from "@/components/SpecificObjectivesSection";
-import JourneySection from "@/components/JourneySection";
-import SupportSection from "@/components/SupportSection";
-import LaboratorySection from "@/components/LaboratorySection";
-import HybridSection from "@/components/HybridSection";
-import ScheduleSection from "@/components/ScheduleSection";
-import ContactSection from "@/components/ContactSection";
 import { Instagram } from "lucide-react";
+
+const ObjectiveSection = lazy(() => import("@/components/ObjectiveSection"));
+const SpecificObjectivesSection = lazy(() => import("@/components/SpecificObjectivesSection"));
+const JourneySection = lazy(() => import("@/components/JourneySection"));
+const SupportSection = lazy(() => import("@/components/SupportSection"));
+const LaboratorySection = lazy(() => import("@/components/LaboratorySection"));
+const HybridSection = lazy(() => import("@/components/HybridSection"));
+const ScheduleSection = lazy(() => import("@/components/ScheduleSection"));
+const ContactSection = lazy(() => import("@/components/ContactSection"));
+
+const SectionFallback = () => (
+  <div className="flex items-center justify-center py-20">
+    <div className="w-5 h-5 border-2 border-accent/30 border-t-accent rounded-full animate-spin" />
+  </div>
+);
 
 const Index = () => {
   return (
     <main className="min-h-screen">
       <HeroSection />
-      <ObjectiveSection />
-      <SpecificObjectivesSection />
-      <JourneySection />
-      <SupportSection />
-      <LaboratorySection />
-      <HybridSection />
-      <ScheduleSection />
-      <ContactSection />
+      <Suspense fallback={<SectionFallback />}>
+        <ObjectiveSection />
+        <SpecificObjectivesSection />
+        <JourneySection />
+        <SupportSection />
+        <LaboratorySection />
+        <HybridSection />
+        <ScheduleSection />
+        <ContactSection />
+      </Suspense>
 
       <footer className="gradient-hero py-8">
         <div className="container max-w-2xl flex flex-col items-center gap-4">
