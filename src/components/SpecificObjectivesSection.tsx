@@ -1,7 +1,7 @@
 import SectionTitle from "./SectionTitle";
 
 const objectives = [
-  "Ampliar o alcance e a nitidez da percepção dos consteladores para melhor identificação das dinâmicas ocultas que envolvem a si próprios, suas famílias, bem como seus clientes;",
+  "Ampliar o alcance e a nitidez da percepção dos consteladores para melhor identificação das dinâmicas ocultas que envolvem a si próprios, suas famílias, bem como seus clientes.",
   "Aprofundar e ampliar a visão da aplicabilidade da ciência sistêmica como reveladora das soluções para quaisquer questões postas na vida, mergulhando na autoconstelação, constelação organizacional, pedagogia sistêmica, e direito sistêmico.",
   "Viabilizar a construção de uma comunidade sistêmica onde haja troca, integração e conexão, tanto no aspecto profissional quanto pessoal, elevando o pertencimento e impulsionando todos para o desempenho de suas funções no mundo.",
   "Movimentar o servir dos alunos e dos consteladores formados mediante as práticas no laboratório sistêmico onde será possível a aplicação da constelação a setores da população que assim necessitem, como forma de construção da prática supervisionada do profissional.",
