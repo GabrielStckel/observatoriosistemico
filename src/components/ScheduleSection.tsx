@@ -134,8 +134,17 @@ const ScheduleSection = () => {
             </div>
           ))}
         </div>
+
+        <div className="flex justify-center mt-6">
+          <button
+            onClick={downloadAllICS}
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs font-body font-medium text-accent border border-accent/20 hover:bg-accent hover:text-accent-foreground transition-all duration-300"
+          >
+            <CalendarPlus size={15} />
+            Adicionar todos à agenda
+          </button>
+        </div>
       </div>
-    </section>
   );
 };
 
