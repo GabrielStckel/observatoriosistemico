@@ -80,6 +80,9 @@ const ScheduleSection = () => {
     <section className="section-muted py-10 md:py-16">
       <div className="container max-w-3xl">
         <SectionTitle label="Cronograma de encontros" />
+        <p className="text-muted-foreground text-xs font-body text-center -mt-2 mb-6">
+          Clique em "Agendar" para adicionar o encontro diretamente à sua agenda.
+        </p>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
           {schedule.map((item, i) => (
