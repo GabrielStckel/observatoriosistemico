@@ -73,7 +73,7 @@ const HeroSection = () => {
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-medium text-primary-foreground leading-[1.15] mb-6 tracking-tight">
             Observatório
             <br />
-            <em className="font-normal">Sistêmico</em>
+            <span>Sistêmico</span>
           </h1>
 
           <p className="font-body text-sm text-primary-foreground/40 max-w-md mx-auto leading-relaxed text-center">
