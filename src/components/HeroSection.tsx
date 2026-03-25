@@ -34,14 +34,14 @@ const HeroSection = () => {
       {/* === Particles — separate layer, NO blur === */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {[
-          { endX: "-30vw", delay: "0s", dur: "6s", size: "3px", opacity: 0.4 },
-          { endX: "28vw", delay: "1.5s", dur: "5.5s", size: "3px", opacity: 0.45 },
-          { endX: "-22vw", delay: "3s", dur: "7s", size: "4px", opacity: 0.35 },
-          { endX: "18vw", delay: "0.8s", dur: "6.5s", size: "3px", opacity: 0.4 },
-          { endX: "-35vw", delay: "4s", dur: "7s", size: "3px", opacity: 0.3 },
-          { endX: "35vw", delay: "2s", dur: "5.8s", size: "3px", opacity: 0.45 },
-          { endX: "-15vw", delay: "5s", dur: "6.5s", size: "3px", opacity: 0.3 },
-          { endX: "25vw", delay: "1s", dur: "6s", size: "3px", opacity: 0.38 },
+          { endX: "-30vw", delay: "0s", dur: "12s", size: "3px", opacity: 0.4 },
+          { endX: "28vw", delay: "2s", dur: "11s", size: "3px", opacity: 0.45 },
+          { endX: "-22vw", delay: "4s", dur: "14s", size: "4px", opacity: 0.35 },
+          { endX: "18vw", delay: "1.5s", dur: "13s", size: "3px", opacity: 0.4 },
+          { endX: "-35vw", delay: "5s", dur: "14s", size: "3px", opacity: 0.3 },
+          { endX: "35vw", delay: "3s", dur: "11.5s", size: "3px", opacity: 0.45 },
+          { endX: "-15vw", delay: "6s", dur: "13s", size: "3px", opacity: 0.3 },
+          { endX: "25vw", delay: "1.5s", dur: "12s", size: "3px", opacity: 0.38 },
         ].map((p, i) => (
           <div
             key={i}
