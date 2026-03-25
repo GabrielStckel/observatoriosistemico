@@ -2,10 +2,10 @@ const HeroSection = () => {
   return (
     <section className="relative gradient-hero overflow-hidden">
       {/* === ABDUCTION BEAM — central light cone === */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ filter: "blur(6px)" }}>
+      <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ filter: "blur(2px)" }}>
         {/* Main tractor beam */}
         <div
-          className="absolute left-1/2 -translate-x-1/2 top-0 w-[340px] md:w-[500px] h-full opacity-[0.14] animate-[beam-pulse_8s_ease-in-out_infinite]"
+          className="absolute left-1/2 -translate-x-1/2 top-0 w-[340px] md:w-[500px] h-full opacity-[0.20] animate-[beam-pulse_8s_ease-in-out_infinite]"
           style={{
             background:
               "linear-gradient(180deg, hsl(220 90% 70% / 0.5) 0%, hsl(220 86% 56% / 0.2) 40%, transparent 100%)",
@@ -14,7 +14,7 @@ const HeroSection = () => {
         />
         {/* Inner bright core */}
         <div
-          className="absolute left-1/2 -translate-x-1/2 top-0 w-[120px] md:w-[180px] h-full opacity-[0.08] animate-[beam-pulse_8s_ease-in-out_infinite_1s]"
+          className="absolute left-1/2 -translate-x-1/2 top-0 w-[120px] md:w-[180px] h-full opacity-[0.12] animate-[beam-pulse_8s_ease-in-out_infinite_1s]"
           style={{
             background:
               "linear-gradient(180deg, hsl(210 100% 85% / 0.7) 0%, hsl(220 86% 60% / 0.15) 50%, transparent 100%)",
@@ -24,14 +24,14 @@ const HeroSection = () => {
 
         {/* Particles falling diagonally from top edges to bottom edges */}
         {[
-          { endX: "-30vw", delay: "0s", dur: "6s", size: "2px", opacity: 0.25 },
-          { endX: "28vw", delay: "1.5s", dur: "5.5s", size: "2px", opacity: 0.3 },
-          { endX: "-22vw", delay: "3s", dur: "7s", size: "3px", opacity: 0.2 },
-          { endX: "18vw", delay: "0.8s", dur: "6.5s", size: "2px", opacity: 0.25 },
-          { endX: "-35vw", delay: "4s", dur: "7s", size: "2px", opacity: 0.18 },
-          { endX: "35vw", delay: "2s", dur: "5.8s", size: "2px", opacity: 0.3 },
-          { endX: "-15vw", delay: "5s", dur: "6.5s", size: "2px", opacity: 0.15 },
-          { endX: "25vw", delay: "1s", dur: "6s", size: "2px", opacity: 0.22 },
+          { endX: "-30vw", delay: "0s", dur: "6s", size: "3px", opacity: 0.4 },
+          { endX: "28vw", delay: "1.5s", dur: "5.5s", size: "3px", opacity: 0.45 },
+          { endX: "-22vw", delay: "3s", dur: "7s", size: "4px", opacity: 0.35 },
+          { endX: "18vw", delay: "0.8s", dur: "6.5s", size: "3px", opacity: 0.4 },
+          { endX: "-35vw", delay: "4s", dur: "7s", size: "3px", opacity: 0.3 },
+          { endX: "35vw", delay: "2s", dur: "5.8s", size: "3px", opacity: 0.45 },
+          { endX: "-15vw", delay: "5s", dur: "6.5s", size: "3px", opacity: 0.3 },
+          { endX: "25vw", delay: "1s", dur: "6s", size: "3px", opacity: 0.38 },
         ].map((p, i) => (
           <div
             key={i}
