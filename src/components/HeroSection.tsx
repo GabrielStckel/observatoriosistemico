@@ -5,7 +5,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ filter: "blur(2px)" }}>
         {/* Main tractor beam */}
         <div
-          className="absolute left-1/2 -translate-x-1/2 top-0 w-[340px] md:w-[500px] h-full opacity-[0.14] animate-[beam-pulse_8s_ease-in-out_infinite]"
+          className="absolute left-1/2 -translate-x-1/2 top-0 w-[340px] md:w-[500px] h-full opacity-[0.20] animate-[beam-pulse_8s_ease-in-out_infinite]"
           style={{
             background:
               "linear-gradient(180deg, hsl(220 90% 70% / 0.5) 0%, hsl(220 86% 56% / 0.2) 40%, transparent 100%)",
