@@ -1,6 +1,6 @@
 import SectionTitle from "./SectionTitle";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { useEffect, useState } from "react";
+
 
 const months = [
   { month: "Março", theme: "Pertencimento", desc: "comunicação, compreensão e conexão com a vida." },
@@ -16,14 +16,6 @@ const months = [
 ];
 
 const JourneySection = () => {
-  const [glowIndex, setGlowIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setGlowIndex((prev) => (prev + 1) % months.length);
-    }, 600);
-    return () => clearInterval(interval);
-  }, []);
 
   const { containerRef, visibleCount } = useScrollReveal(months.length);
 
@@ -54,8 +46,6 @@ const JourneySection = () => {
               const borderWidth = progress > 0.7 ? 0 : 2;
               const glowSize = progress * 20;
 
-              const isGlowing = glowIndex === i || glowIndex === i - 1;
-
               return (
                 <div
                   key={i}
@@ -79,11 +69,7 @@ const JourneySection = () => {
                         border: isVisible && borderWidth > 0
                           ? `${borderWidth}px solid hsl(220 86% 56% / 0.3)`
                           : "none",
-                        boxShadow: isGlowing && isVisible
-                          ? `0 0 ${12 + glowSize}px ${6 + glowSize * 0.4}px hsl(220 86% 56% / 0.35)`
-                          : isVisible && glowSize > 0
-                          ? `0 0 ${glowSize}px ${glowSize * 0.4}px hsl(220 86% 56% / ${progress * 0.25})`
-                          : "none",
+                        boxShadow: "none",
                         transition: "all 0.6s ease",
                       }}
                     />
