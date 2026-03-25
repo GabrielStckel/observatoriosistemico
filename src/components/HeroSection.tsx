@@ -23,7 +23,7 @@ const HeroSection = () => {
         />
         {/* Glow at bottom — "portal" */}
         <div
-          className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] md:w-[900px] h-[120px] opacity-[0.15] animate-[beam-pulse_10s_ease-in-out_infinite_2s]"
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] md:w-[900px] h-[120px] opacity-[0.15] animate-[beam-pulse_10s_ease-in-out_infinite]"
           style={{
             background:
               "radial-gradient(ellipse at 50% 100%, hsl(220 90% 60% / 0.5) 0%, hsl(220 80% 50% / 0.15) 40%, transparent 70%)",
