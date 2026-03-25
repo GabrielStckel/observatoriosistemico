@@ -9,7 +9,7 @@ const SupportSection = lazy(() => import("@/components/SupportSection"));
 const LaboratorySection = lazy(() => import("@/components/LaboratorySection"));
 const HybridSection = lazy(() => import("@/components/HybridSection"));
 const ScheduleSection = lazy(() => import("@/components/ScheduleSection"));
-const ContactSection = lazy(() => import("@/components/ContactSection"));
+
 
 const SectionFallback = () => (
   <div className="flex items-center justify-center py-20">
@@ -29,7 +29,7 @@ const Index = () => {
         <LaboratorySection />
         <HybridSection />
         <ScheduleSection />
-        <ContactSection />
+        
       </Suspense>
 
       <footer className="gradient-hero py-8">
