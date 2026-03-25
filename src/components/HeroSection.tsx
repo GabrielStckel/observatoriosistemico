@@ -1,8 +1,8 @@
 const HeroSection = () => {
   return (
     <section className="relative gradient-hero overflow-hidden">
-      {/* === ABDUCTION BEAM — central light cone === */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ filter: "blur(2px)" }}>
+      {/* === ABDUCTION BEAM — blurred light cone === */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ filter: "blur(4px)" }}>
         {/* Main tractor beam */}
         <div
           className="absolute left-1/2 -translate-x-1/2 top-0 w-[340px] md:w-[500px] h-full opacity-[0.20] animate-[beam-pulse_8s_ease-in-out_infinite]"
@@ -21,8 +21,18 @@ const HeroSection = () => {
             clipPath: "polygon(30% 0%, 70% 0%, 85% 100%, 15% 100%)",
           }}
         />
+        {/* Glow at bottom — "portal" */}
+        <div
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] md:w-[900px] h-[120px] opacity-[0.15] animate-[beam-pulse_10s_ease-in-out_infinite_2s]"
+          style={{
+            background:
+              "radial-gradient(ellipse at 50% 100%, hsl(220 90% 60% / 0.5) 0%, hsl(220 80% 50% / 0.15) 40%, transparent 70%)",
+          }}
+        />
+      </div>
 
-        {/* Particles falling diagonally from top edges to bottom edges */}
+      {/* === Particles — separate layer, NO blur === */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {[
           { endX: "-30vw", delay: "0s", dur: "6s", size: "3px", opacity: 0.4 },
           { endX: "28vw", delay: "1.5s", dur: "5.5s", size: "3px", opacity: 0.45 },
@@ -49,15 +59,6 @@ const HeroSection = () => {
             }}
           />
         ))}
-
-        {/* Glow at bottom — "portal" */}
-        <div
-          className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] md:w-[900px] h-[120px] opacity-[0.15] animate-[beam-pulse_10s_ease-in-out_infinite_2s]"
-          style={{
-            background:
-              "radial-gradient(ellipse at 50% 100%, hsl(220 90% 60% / 0.5) 0%, hsl(220 80% 50% / 0.15) 40%, transparent 70%)",
-          }}
-        />
       </div>
 
       {/* Content */}
