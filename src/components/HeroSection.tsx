@@ -2,7 +2,7 @@ const HeroSection = () => {
   return (
     <section className="relative gradient-hero overflow-hidden">
       {/* === ABDUCTION BEAM — central light cone === */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ filter: "blur(6px)" }}>
+      <div className="absolute inset-0 pointer-events-none overflow-hidden" style={{ filter: "blur(2px)" }}>
         {/* Main tractor beam */}
         <div
           className="absolute left-1/2 -translate-x-1/2 top-0 w-[340px] md:w-[500px] h-full opacity-[0.14] animate-[beam-pulse_8s_ease-in-out_infinite]"
