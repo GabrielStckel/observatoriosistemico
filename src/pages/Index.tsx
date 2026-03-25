@@ -29,7 +29,7 @@ const Index = () => {
         <LaboratorySection />
         <HybridSection />
         <ScheduleSection />
-        <ContactSection />
+        
       </Suspense>
 
       <footer className="gradient-hero py-8">
