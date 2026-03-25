@@ -24,14 +24,14 @@ const HeroSection = () => {
 
         {/* Particles falling diagonally from top edges to bottom edges */}
         {[
-          { endX: "-30vw", delay: "0s", dur: "6s", size: "2px", opacity: 0.25 },
-          { endX: "28vw", delay: "1.5s", dur: "5.5s", size: "2px", opacity: 0.3 },
-          { endX: "-22vw", delay: "3s", dur: "7s", size: "3px", opacity: 0.2 },
-          { endX: "18vw", delay: "0.8s", dur: "6.5s", size: "2px", opacity: 0.25 },
-          { endX: "-35vw", delay: "4s", dur: "7s", size: "2px", opacity: 0.18 },
-          { endX: "35vw", delay: "2s", dur: "5.8s", size: "2px", opacity: 0.3 },
-          { endX: "-15vw", delay: "5s", dur: "6.5s", size: "2px", opacity: 0.15 },
-          { endX: "25vw", delay: "1s", dur: "6s", size: "2px", opacity: 0.22 },
+          { endX: "-30vw", delay: "0s", dur: "6s", size: "3px", opacity: 0.4 },
+          { endX: "28vw", delay: "1.5s", dur: "5.5s", size: "3px", opacity: 0.45 },
+          { endX: "-22vw", delay: "3s", dur: "7s", size: "4px", opacity: 0.35 },
+          { endX: "18vw", delay: "0.8s", dur: "6.5s", size: "3px", opacity: 0.4 },
+          { endX: "-35vw", delay: "4s", dur: "7s", size: "3px", opacity: 0.3 },
+          { endX: "35vw", delay: "2s", dur: "5.8s", size: "3px", opacity: 0.45 },
+          { endX: "-15vw", delay: "5s", dur: "6.5s", size: "3px", opacity: 0.3 },
+          { endX: "25vw", delay: "1s", dur: "6s", size: "3px", opacity: 0.38 },
         ].map((p, i) => (
           <div
             key={i}

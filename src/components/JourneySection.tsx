@@ -79,9 +79,12 @@ const JourneySection = () => {
                         border: isVisible && borderWidth > 0
                           ? `${borderWidth}px solid hsl(220 86% 56% / 0.3)`
                           : "none",
-                        boxShadow: isVisible && glowSize > 0
+                        boxShadow: isGlowing && isVisible
+                          ? `0 0 ${12 + glowSize}px ${6 + glowSize * 0.4}px hsl(220 86% 56% / 0.35)`
+                          : isVisible && glowSize > 0
                           ? `0 0 ${glowSize}px ${glowSize * 0.4}px hsl(220 86% 56% / ${progress * 0.25})`
                           : "none",
+                        transition: "all 0.6s ease",
                       }}
                     />
                   </div>
