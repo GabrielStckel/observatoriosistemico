@@ -138,7 +138,7 @@
 
 @keyframes beam-pulse {
   0%, 100% { opacity: 0.5; transform: translateX(-50%) scaleY(1); }
-  50% { opacity: 1; transform: translateX(-50%) scaleY(1.03); }
+  50% { opacity: 0.7; transform: translateX(-50%) scaleY(1.01); }
 }
 
 @keyframes ring-sweep {
