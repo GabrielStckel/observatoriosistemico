@@ -16,6 +16,15 @@ const months = [
 ];
 
 const JourneySection = () => {
+  const [glowIndex, setGlowIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setGlowIndex((prev) => (prev + 1) % months.length);
+    }, 600);
+    return () => clearInterval(interval);
+  }, []);
+
   const { containerRef, visibleCount } = useScrollReveal(months.length);
 
   return (
