@@ -38,54 +38,32 @@ const HeroSection = () => {
           }}
         />
 
-        {/* Ascending particles — sucked upward */}
+        {/* Particles falling diagonally from center to bottom edges */}
         {[
-          { left: "30%", delay: "0s", dur: "3s", size: "3px", opacity: 0.5 },
-          { left: "45%", delay: "0.8s", dur: "2.5s", size: "2px", opacity: 0.7 },
-          { left: "55%", delay: "1.5s", dur: "3.2s", size: "4px", opacity: 0.4 },
-          { left: "65%", delay: "0.3s", dur: "2.8s", size: "2px", opacity: 0.6 },
-          { left: "38%", delay: "2s", dur: "3.5s", size: "3px", opacity: 0.35 },
-          { left: "52%", delay: "1s", dur: "2.2s", size: "2px", opacity: 0.55 },
-          { left: "70%", delay: "2.5s", dur: "3s", size: "3px", opacity: 0.3 },
-          { left: "42%", delay: "0.5s", dur: "2.7s", size: "2px", opacity: 0.65 },
+          { endX: "-30vw", delay: "0s", dur: "3.5s", size: "3px", opacity: 0.5 },
+          { endX: "28vw", delay: "0.8s", dur: "3s", size: "2px", opacity: 0.6 },
+          { endX: "-22vw", delay: "1.5s", dur: "4s", size: "4px", opacity: 0.4 },
+          { endX: "18vw", delay: "0.3s", dur: "3.2s", size: "2px", opacity: 0.55 },
+          { endX: "-35vw", delay: "2s", dur: "3.8s", size: "3px", opacity: 0.35 },
+          { endX: "35vw", delay: "1s", dur: "2.8s", size: "2px", opacity: 0.65 },
+          { endX: "-15vw", delay: "2.5s", dur: "3.5s", size: "3px", opacity: 0.3 },
+          { endX: "25vw", delay: "0.5s", dur: "3s", size: "2px", opacity: 0.5 },
+          { endX: "-40vw", delay: "1.8s", dur: "4.2s", size: "3px", opacity: 0.45 },
+          { endX: "40vw", delay: "0.2s", dur: "3.3s", size: "2px", opacity: 0.4 },
         ].map((p, i) => (
           <div
             key={i}
-            className="absolute rounded-full animate-[float-up_var(--dur)_ease-in_infinite_var(--delay)]"
+            className="absolute rounded-full"
             style={{
               width: p.size,
               height: p.size,
-              left: p.left,
-              bottom: "5%",
-              opacity: p.opacity,
+              left: "50%",
+              top: "25%",
+              opacity: 0,
               background: "hsl(220 90% 80%)",
               boxShadow: "0 0 6px 2px hsl(220 90% 70% / 0.6)",
-              ["--dur" as string]: p.dur,
-              ["--delay" as string]: p.delay,
-            }}
-          />
-        ))}
-
-        {/* Falling light streaks */}
-        {[
-          { left: "20%", delay: "0s", dur: "8s", h: "180px", opacity: 0.09 },
-          { left: "35%", delay: "2s", dur: "12s", h: "140px", opacity: 0.12 },
-          { left: "50%", delay: "1s", dur: "10s", h: "200px", opacity: 0.08 },
-          { left: "65%", delay: "3s", dur: "9s", h: "160px", opacity: 0.1 },
-          { left: "78%", delay: "0.5s", dur: "11s", h: "120px", opacity: 0.07 },
-        ].map((s, i) => (
-          <div
-            key={`streak-${i}`}
-            className="absolute w-[2px] animate-[drift-down-1_var(--dur)_linear_infinite_var(--delay)]"
-            style={{
-              height: s.h,
-              left: s.left,
-              top: "-15%",
-              opacity: s.opacity,
-              background:
-                "linear-gradient(180deg, transparent, hsl(220 86% 75%), hsl(210 80% 85%), transparent)",
-              ["--dur" as string]: s.dur,
-              ["--delay" as string]: s.delay,
+              animation: `diagonal-fall ${p.dur} ease-in infinite ${p.delay}`,
+              ["--end-x" as string]: p.endX,
             }}
           />
         ))}
@@ -102,7 +80,7 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center min-h-[65vh] px-6 py-24">
-        <div className="animate-fade-up text-center">
+        <div className="animate-fade-up text-center" style={{ textShadow: "0 2px 12px hsl(220 90% 10% / 0.6), 0 0 30px hsl(220 86% 56% / 0.15)" }}>
           <div className="inline-block mb-8">
             <div className="w-px h-12 bg-accent/40 mx-auto mb-6" />
             <span className="font-body text-[11px] font-medium tracking-[0.35em] uppercase text-primary-foreground/50">
@@ -125,9 +103,6 @@ const HeroSection = () => {
           <div className="w-px h-12 bg-accent/40 mx-auto mt-8" />
         </div>
       </div>
-
-      {/* Bottom edge glow line */}
-      <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
     </section>
   );
 };

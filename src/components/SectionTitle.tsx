@@ -1,5 +1,7 @@
+import { ReactNode } from "react";
+
 interface SectionTitleProps {
-  label: string;
+  label: ReactNode;
   subtitle?: string;
   light?: boolean;
 }
