@@ -17,7 +17,7 @@ const SectionFallback = () => (
   </div>
 );
 
-const Index = () => {
+const Index3 = () => {
   return (
     <main className="min-h-screen">
       <HeroSection />
