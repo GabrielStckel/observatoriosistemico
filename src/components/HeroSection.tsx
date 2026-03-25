@@ -99,7 +99,7 @@ const HeroSection = () => {
             Encontros presenciais e híbridos.
           </p>
 
-          <div className="w-px h-12 bg-accent/40 mx-auto mt-8" />
+          
         </div>
       </div>
     </section>
