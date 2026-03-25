@@ -82,7 +82,6 @@ const HeroSection = () => {
       <div className="relative z-10 flex flex-col items-center justify-center min-h-[65vh] px-6 py-24">
         <div className="animate-fade-up text-center" style={{ textShadow: "0 2px 12px hsl(220 90% 10% / 0.6), 0 0 30px hsl(220 86% 56% / 0.15)" }}>
           <div className="inline-block mb-8">
-            <div className="w-px h-12 bg-accent/40 mx-auto mb-6" />
             <span className="font-body text-[11px] font-medium tracking-[0.35em] uppercase text-primary-foreground/50">
               Ano III · Mastermind
             </span>
@@ -100,7 +99,7 @@ const HeroSection = () => {
             Encontros presenciais e híbridos.
           </p>
 
-          <div className="w-px h-12 bg-accent/40 mx-auto mt-8" />
+          
         </div>
       </div>
     </section>
