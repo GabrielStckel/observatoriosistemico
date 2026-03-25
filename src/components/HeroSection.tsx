@@ -126,8 +126,6 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Bottom edge glow line */}
-      <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
     </section>
   );
 };
