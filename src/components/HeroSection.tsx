@@ -62,7 +62,7 @@ const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-[85vh] md:min-h-[90vh] px-6 py-32">
+      <div className="relative z-10 flex flex-col items-center justify-center <div className="relative z-10 flex flex-col items-center justify-center min-h-[75vh] md:min-h-[80vh] px-6 py-32"> px-6 py-32">
         <div className="animate-fade-up text-center" style={{ textShadow: "0 2px 12px hsl(220 90% 10% / 0.6), 0 0 30px hsl(220 86% 56% / 0.15)" }}>
           <div className="inline-block mb-8">
             <span className="font-body text-[11px] font-medium tracking-[0.35em] uppercase text-primary-foreground/50">
