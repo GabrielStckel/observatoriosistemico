@@ -54,4 +54,4 @@ const Index3 = () => {
   );
 };
 
-export default Index;
+export default Index3;
