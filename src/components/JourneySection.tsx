@@ -54,6 +54,8 @@ const JourneySection = () => {
               const borderWidth = progress > 0.7 ? 0 : 2;
               const glowSize = progress * 20;
 
+              const isGlowing = glowIndex === i || glowIndex === i - 1;
+
               return (
                 <div
                   key={i}
