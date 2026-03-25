@@ -22,21 +22,6 @@ const HeroSection = () => {
           }}
         />
 
-        {/* Sweeping horizontal rings */}
-        <div
-          className="absolute left-1/2 -translate-x-1/2 top-[55%] w-[500px] md:w-[700px] h-[3px] rounded-full opacity-[0.15] animate-[ring-sweep_3s_ease-in-out_infinite]"
-          style={{
-            background:
-              "radial-gradient(ellipse, hsl(220 90% 70% / 0.8) 0%, transparent 70%)",
-          }}
-        />
-        <div
-          className="absolute left-1/2 -translate-x-1/2 top-[65%] w-[400px] md:w-[550px] h-[2px] rounded-full opacity-[0.1] animate-[ring-sweep_3s_ease-in-out_infinite_1s]"
-          style={{
-            background:
-              "radial-gradient(ellipse, hsl(210 80% 75% / 0.7) 0%, transparent 70%)",
-          }}
-        />
 
         {/* Particles falling diagonally from center to bottom edges */}
         {[
