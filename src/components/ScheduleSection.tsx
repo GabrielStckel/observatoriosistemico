@@ -77,7 +77,7 @@ const ScheduleSection = () => {
   const [openMenu, setOpenMenu] = useState<number | null>(null);
 
   return (
-    <section className="section-muted py-10 md:py-16">
+    <section className="section-muted pt-10 pb-16 md:pt-16 md:pb-24">
       <div className="container max-w-3xl">
         <SectionTitle label="Cronograma de encontros" />
         <p className="text-muted-foreground text-xs font-body text-center -mt-2 mb-6">
