@@ -19,7 +19,7 @@ const SectionFallback = () => (
 
 const Index3 = () => {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen theme-blue">
       <HeroSection />
       <Suspense fallback={<SectionFallback />}>
         <ObjectiveSection />
