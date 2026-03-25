@@ -135,3 +135,56 @@
   0% { transform: translateY(0) translateX(0); }
   100% { transform: translateY(calc(65vh + 100%)) translateX(-10px); }
 }
+
+/* Scoped blue theme for /3 */
+.theme-blue {
+  --background: 210 80% 12%;
+  --foreground: 210 20% 92%;
+  --card: 210 70% 16%;
+  --card-foreground: 210 20% 92%;
+  --popover: 210 70% 16%;
+  --popover-foreground: 210 20% 92%;
+  --primary: 210 80% 12%;
+  --primary-foreground: 210 20% 92%;
+  --secondary: 210 50% 20%;
+  --secondary-foreground: 210 20% 88%;
+  --muted: 210 50% 20%;
+  --muted-foreground: 210 15% 65%;
+  --accent: 220 86% 56%;
+  --accent-foreground: 0 0% 100%;
+  --border: 210 50% 22%;
+  --input: 210 50% 22%;
+  --ring: 220 86% 56%;
+  --surface: 210 70% 16%;
+}
+
+.theme-blue .gradient-hero {
+  background: linear-gradient(
+    175deg,
+    hsl(210 80% 8%) 0%,
+    hsl(220 70% 14%) 50%,
+    hsl(215 60% 18%) 100%
+  );
+}
+
+.theme-blue .section-white {
+  background: hsl(210 70% 16%);
+}
+
+.theme-blue .section-muted {
+  background: hsl(210 60% 14%);
+}
+
+.theme-blue .card-refined {
+  background: hsl(210 60% 18%);
+  border-color: hsl(210 50% 25%);
+}
+
+.theme-blue .card-refined:hover {
+  border-color: hsl(220 86% 56% / 0.4);
+  box-shadow: 0 1px 12px -2px hsl(220 80% 50% / 0.15);
+}
+
+.theme-blue .timeline-line {
+  background: hsl(210 40% 28%);
+}
