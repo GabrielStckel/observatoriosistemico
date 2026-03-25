@@ -1,5 +1,6 @@
 import SectionTitle from "./SectionTitle";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { useEffect, useState } from "react";
 
 const months = [
   { month: "Março", theme: "Pertencimento", desc: "comunicação, compreensão e conexão com a vida." },
