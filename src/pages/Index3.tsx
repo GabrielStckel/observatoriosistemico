@@ -29,6 +29,7 @@ const Index3 = () => {
         <SupportSection />
         <LaboratorySection />
         <HybridSection />
+        <MeetingSummariesSection />
         <ScheduleSection />
         
       </Suspense>
