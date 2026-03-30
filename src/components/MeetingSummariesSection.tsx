@@ -45,6 +45,7 @@ const MeetingSummariesSection = () => {
                   <a
                     href={item.url}
                     download
+                    onClick={() => trackActivity("pdf_download", { month: item.month })}
                     className="flex items-center gap-1 text-[10px] font-body text-muted-foreground hover:text-accent transition-colors mt-auto"
                   >
                     <Download size={12} />

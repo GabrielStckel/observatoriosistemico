@@ -128,6 +128,7 @@ const ScheduleSection = () => {
                     </a>
                     <button
                       onClick={() => {
+                        trackActivity("calendar_add", { month: item.month, type: "ics" });
                         downloadICS(item);
                         setOpenMenu(null);
                       }}
