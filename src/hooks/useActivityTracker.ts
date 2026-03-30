@@ -4,9 +4,9 @@ export const trackActivity = async (action: string, metadata: Record<string, unk
   const { data: { session } } = await supabase.auth.getSession();
   if (!session?.user) return;
 
-  await supabase.from("activity_logs").insert({
+  await supabase.from("activity_logs").insert([{
     user_id: session.user.id,
     action,
-    metadata,
-  });
+    metadata: metadata as any,
+  }]);
 };
