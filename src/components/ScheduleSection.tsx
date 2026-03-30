@@ -119,7 +119,10 @@ const ScheduleSection = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="block px-4 py-2 text-xs font-body text-foreground hover:bg-muted transition-colors text-left"
-                      onClick={() => setOpenMenu(null)}
+                      onClick={() => {
+                        trackActivity("calendar_add", { month: item.month, type: "google" });
+                        setOpenMenu(null);
+                      }}
                     >
                       Google Agenda
                     </a>
