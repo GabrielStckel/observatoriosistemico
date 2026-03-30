@@ -1,6 +1,7 @@
 import SectionTitle from "./SectionTitle";
 import { CalendarPlus } from "lucide-react";
 import { useState } from "react";
+import { trackActivity } from "@/hooks/useActivityTracker";
 
 const schedule = [
   { month: "Março", dates: "14 e 15/03", start: "2025-03-14", end: "2025-03-16" },
