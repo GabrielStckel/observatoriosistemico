@@ -1,5 +1,6 @@
 import SectionTitle from "./SectionTitle";
 import { FileText, Download } from "lucide-react";
+import { trackActivity } from "@/hooks/useActivityTracker";
 
 interface SummaryPDF {
   month: string;
