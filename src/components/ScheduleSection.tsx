@@ -1,6 +1,7 @@
 import SectionTitle from "./SectionTitle";
 import { CalendarPlus } from "lucide-react";
 import { useState } from "react";
+import { trackActivity } from "@/hooks/useActivityTracker";
 
 const schedule = [
   { month: "Março", dates: "14 e 15/03", start: "2025-03-14", end: "2025-03-16" },
@@ -118,12 +119,16 @@ const ScheduleSection = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="block px-4 py-2 text-xs font-body text-foreground hover:bg-muted transition-colors text-left"
-                      onClick={() => setOpenMenu(null)}
+                      onClick={() => {
+                        trackActivity("calendar_add", { month: item.month, type: "google" });
+                        setOpenMenu(null);
+                      }}
                     >
                       Google Agenda
                     </a>
                     <button
                       onClick={() => {
+                        trackActivity("calendar_add", { month: item.month, type: "ics" });
                         downloadICS(item);
                         setOpenMenu(null);
                       }}
