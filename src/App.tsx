@@ -23,14 +23,7 @@ const App = () => (
         <AuthProvider>
           <Routes>
             <Route path="/login" element={<Login />} />
-            <Route
-              path="/informacoes"
-              element={
-                <ProtectedRoute>
-                  <Index3 />
-                </ProtectedRoute>
-              }
-            />
+            <Route path="/informacoes" element={<Index3 />} />
             <Route
               path="/admin"
               element={
