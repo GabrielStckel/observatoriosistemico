@@ -10,12 +10,17 @@ export function useScrollReveal(itemCount: number) {
 
     const observer = new IntersectionObserver(
       (entries) => {
+        let maxIndex = -1;
         entries.forEach((entry) => {
-          const index = Number(entry.target.getAttribute("data-index"));
-          if (entry.isIntersecting && index >= visibleCount) {
-            setVisibleCount((prev) => Math.max(prev, index + 1));
+          if (entry.isIntersecting) {
+            const index = Number(entry.target.getAttribute("data-index"));
+            if (index > maxIndex) maxIndex = index;
+            observer.unobserve(entry.target);
           }
         });
+        if (maxIndex >= 0) {
+          setVisibleCount((prev) => Math.max(prev, maxIndex + 1));
+        }
       },
       { threshold: 0.3, rootMargin: "0px 0px -10% 0px" }
     );
@@ -24,7 +29,7 @@ export function useScrollReveal(itemCount: number) {
     items.forEach((item) => observer.observe(item));
 
     return () => observer.disconnect();
-  }, [itemCount, visibleCount]);
+  }, [itemCount]);
 
   return { containerRef, visibleCount };
 }
