@@ -111,7 +111,7 @@ const Login = () => {
         </div>
 
 
-        <form onSubmit={handleSubmit} className="card-refined p-6 space-y-4 bg-surface">
+        <form onSubmit={handleSubmit} className="card-refined p-6 space-y-4 bg-surface w-full shadow-2xl rounded-2xl">
           {isSignUp && (
             <div className="space-y-2">
               <Label htmlFor="fullName" className="text-foreground text-xs font-body">Nome completo</Label>
