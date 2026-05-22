@@ -34,11 +34,11 @@ const MeetingSummariesSection = () => {
               <div
                 key={i}
                 className={`card-refined p-4 text-center flex flex-col items-center gap-2 ${
-                  !available ? "opacity-50" : ""
+                  !available ? "opacity-50" : "border-accent/40"
                 }`}
               >
-                <FileText size={20} className="text-accent/60" />
-                <span className="block text-[10px] font-body font-semibold uppercase tracking-[0.12em] text-accent/60">
+                <FileText size={20} className={available ? "text-accent" : "text-accent/60"} />
+                <span className={`block text-[10px] font-body font-semibold uppercase tracking-[0.12em] ${available ? "text-accent" : "text-accent/60"}`}>
                   {item.month}
                 </span>
                 {available ? (
@@ -46,9 +46,9 @@ const MeetingSummariesSection = () => {
                     href={item.url}
                     download
                     onClick={() => trackActivity("pdf_download", { month: item.month })}
-                    className="flex items-center gap-1 text-[10px] font-body font-semibold text-primary hover:text-accent transition-colors mt-auto"
+                    className="flex items-center gap-1.5 text-xs font-body font-bold text-accent hover:text-primary transition-colors mt-auto"
                   >
-                    <Download size={12} />
+                    <Download size={14} />
                     <span>Baixar PDF</span>
                   </a>
                 ) : (
