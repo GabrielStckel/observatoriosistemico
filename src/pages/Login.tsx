@@ -26,8 +26,11 @@ const Login = () => {
   const from = (location.state as { from?: string } | null)?.from || "/informacoes";
 
   useEffect(() => {
-    if (session) navigate(from, { replace: true });
-  }, [session, navigate, from]);
+    // Só redireciona automaticamente se o usuário foi enviado para /login a partir de uma rota protegida
+    if (session && (location.state as { from?: string } | null)?.from) {
+      navigate(from, { replace: true });
+    }
+  }, [session, navigate, from, location.state]);
 
   const handleOAuth = async (provider: "google" | "apple") => {
     const result = await lovable.auth.signInWithOAuth(provider, {
