@@ -22,7 +22,7 @@ const Login = () => {
   const location = useLocation();
   const { toast } = useToast();
   const { session } = useAuth();
-  const from = (location.state as { from?: string } | null)?.from || "/informacoes";
+  const from = (location.state as { from?: string } | null)?.from || "/ano3";
 
   useEffect(() => {
     // Só redireciona automaticamente se o usuário foi enviado para /login a partir de uma rota protegida
