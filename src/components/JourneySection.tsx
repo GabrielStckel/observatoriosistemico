@@ -24,7 +24,7 @@ const JourneySection = () => {
       <div className="container max-w-3xl">
         <SectionTitle
           label="Funcionamento"
-          subtitle="Encontros mensais ao vivo, presenciais e híbridos:"
+          subtitle="Encontros mensais presenciais:"
         />
 
         <div className="relative mt-8" ref={containerRef}>
