@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { lovable } from "@/integrations/lovable";
 import { Button } from "@/components/ui/button";
@@ -20,23 +20,25 @@ const Login = () => {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
   const { toast } = useToast();
   const { session } = useAuth();
+  const from = (location.state as { from?: string } | null)?.from || "/informacoes";
 
   useEffect(() => {
-    if (session) navigate("/informacoes", { replace: true });
-  }, [session, navigate]);
+    if (session) navigate(from, { replace: true });
+  }, [session, navigate, from]);
 
   const handleOAuth = async (provider: "google" | "apple") => {
     const result = await lovable.auth.signInWithOAuth(provider, {
-      redirect_uri: window.location.origin + "/informacoes",
+      redirect_uri: window.location.origin + from,
     });
     if (result.error) {
       toast({ title: "Erro ao entrar", description: result.error.message, variant: "destructive" });
       return;
     }
     if (result.redirected) return;
-    navigate("/informacoes", { replace: true });
+    navigate(from, { replace: true });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -63,14 +65,14 @@ const Login = () => {
           password,
           options: {
             data: { full_name: fullName },
-            emailRedirectTo: `${window.location.origin}/informacoes`,
+            emailRedirectTo: `${window.location.origin}${from}`,
           },
         });
         if (error) {
           toast({ title: "Erro ao criar conta", description: error.message, variant: "destructive" });
         } else if (data.session) {
           toast({ title: "Conta criada!", description: "Redirecionando..." });
-          navigate("/informacoes", { replace: true });
+          navigate(from, { replace: true });
         } else {
           toast({ title: "Conta criada!", description: "Verifique seu email para confirmar o cadastro." });
         }
@@ -82,7 +84,7 @@ const Login = () => {
         if (error) {
           toast({ title: "Erro ao entrar", description: error.message, variant: "destructive" });
         } else {
-          navigate("/informacoes", { replace: true });
+          navigate(from, { replace: true });
         }
       }
     } finally {
