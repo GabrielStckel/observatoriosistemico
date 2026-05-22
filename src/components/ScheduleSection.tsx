@@ -16,7 +16,7 @@ const schedule = [
   { month: "Dezembro", dates: "05 e 06/12", start: "2025-12-05", end: "2025-12-07" },
 ];
 
-const eventTitle = "Observatório Sistêmico - Encontro";
+const eventTitle = "Observatório Sistêmico";
 const eventDescription = "Encontro do Observatório Sistêmico";
 
 function toGoogleCalendarUrl(item: typeof schedule[0]) {
