@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { lovable } from "@/integrations/lovable";
@@ -7,7 +7,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
-import { useEffect } from "react";
 
 const Login = () => {
   const [isSignUp, setIsSignUp] = useState(false);
@@ -39,33 +38,38 @@ const Login = () => {
     e.preventDefault();
     setLoading(true);
 
-    if (isSignUp) {
-      const { error } = await supabase.auth.signUp({
-        email: email.trim(),
-        password,
-        options: {
-          data: { full_name: fullName.trim() },
-          emailRedirectTo: window.location.origin,
-        },
-      });
-      if (error) {
-        toast({ title: "Erro ao criar conta", description: error.message, variant: "destructive" });
+    try {
+      if (isSignUp) {
+        const { data, error } = await supabase.auth.signUp({
+          email: email.trim(),
+          password,
+          options: {
+            data: { full_name: fullName.trim() },
+            emailRedirectTo: `${window.location.origin}/ano3`,
+          },
+        });
+        if (error) {
+          toast({ title: "Erro ao criar conta", description: error.message, variant: "destructive" });
+        } else if (data.session) {
+          toast({ title: "Conta criada!", description: "Redirecionando..." });
+          navigate("/ano3", { replace: true });
+        } else {
+          toast({ title: "Conta criada!", description: "Verifique seu email para confirmar o cadastro." });
+        }
       } else {
-        toast({ title: "Conta criada!", description: "Verifique seu email para confirmar o cadastro." });
+        const { error } = await supabase.auth.signInWithPassword({
+          email: email.trim(),
+          password,
+        });
+        if (error) {
+          toast({ title: "Erro ao entrar", description: error.message, variant: "destructive" });
+        } else {
+          navigate("/ano3", { replace: true });
+        }
       }
-    } else {
-      const { error } = await supabase.auth.signInWithPassword({
-        email: email.trim(),
-        password,
-      });
-      if (error) {
-        toast({ title: "Erro ao entrar", description: error.message, variant: "destructive" });
-      } else {
-        navigate("/ano3", { replace: true });
-      }
+    } finally {
+      setLoading(false);
     }
-
-    setLoading(false);
   };
 
   return (
