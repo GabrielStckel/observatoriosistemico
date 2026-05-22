@@ -44,6 +44,7 @@ export type Database = {
           email: string | null
           full_name: string
           id: string
+          phone: string | null
           turma_id: string | null
           user_id: string
         }
@@ -52,6 +53,7 @@ export type Database = {
           email?: string | null
           full_name: string
           id?: string
+          phone?: string | null
           turma_id?: string | null
           user_id: string
         }
@@ -60,6 +62,7 @@ export type Database = {
           email?: string | null
           full_name?: string
           id?: string
+          phone?: string | null
           turma_id?: string | null
           user_id?: string
         }
