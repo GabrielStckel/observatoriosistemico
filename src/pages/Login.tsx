@@ -7,12 +7,17 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
+import { Eye, EyeOff } from "lucide-react";
 
 const Login = () => {
   const [isSignUp, setIsSignUp] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [fullName, setFullName] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { toast } = useToast();
@@ -36,15 +41,28 @@ const Login = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (isSignUp) {
+      if (!firstName.trim() || !lastName.trim()) {
+        toast({ title: "Dados incompletos", description: "Informe nome e sobrenome.", variant: "destructive" });
+        return;
+      }
+      if (password !== confirmPassword) {
+        toast({ title: "Senhas não conferem", description: "A confirmação deve ser igual à senha.", variant: "destructive" });
+        return;
+      }
+    }
+
     setLoading(true);
 
     try {
       if (isSignUp) {
+        const fullName = `${firstName.trim()} ${lastName.trim()}`;
         const { data, error } = await supabase.auth.signUp({
           email: email.trim(),
           password,
           options: {
-            data: { full_name: fullName.trim() },
+            data: { full_name: fullName },
             emailRedirectTo: `${window.location.origin}/ano3`,
           },
         });
@@ -73,7 +91,7 @@ const Login = () => {
   };
 
   return (
-    <main className="min-h-screen theme-blue gradient-hero flex items-center justify-center px-4">
+    <main className="min-h-screen theme-blue gradient-hero flex items-center justify-center px-4 py-8">
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
           <h1 className="font-display text-3xl font-medium text-primary-foreground tracking-wide mb-2">
@@ -86,17 +104,31 @@ const Login = () => {
 
         <form onSubmit={handleSubmit} className="card-refined p-6 space-y-4 bg-surface">
           {isSignUp && (
-            <div className="space-y-2">
-              <Label htmlFor="name" className="text-foreground text-xs font-body">Nome completo</Label>
-              <Input
-                id="name"
-                type="text"
-                value={fullName}
-                onChange={(e) => setFullName(e.target.value)}
-                required
-                placeholder="Seu nome"
-                className="text-sm"
-              />
+            <div className="grid grid-cols-2 gap-2">
+              <div className="space-y-2">
+                <Label htmlFor="firstName" className="text-foreground text-xs font-body">Nome</Label>
+                <Input
+                  id="firstName"
+                  type="text"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                  required
+                  placeholder="Nome"
+                  className="text-sm"
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="lastName" className="text-foreground text-xs font-body">Sobrenome</Label>
+                <Input
+                  id="lastName"
+                  type="text"
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                  required
+                  placeholder="Sobrenome"
+                  className="text-sm"
+                />
+              </div>
             </div>
           )}
 
@@ -115,17 +147,56 @@ const Login = () => {
 
           <div className="space-y-2">
             <Label htmlFor="password" className="text-foreground text-xs font-body">Senha</Label>
-            <Input
-              id="password"
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              minLength={6}
-              placeholder="••••••••"
-              className="text-sm"
-            />
+            <div className="relative">
+              <Input
+                id="password"
+                type={showPassword ? "text" : "password"}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                minLength={6}
+                placeholder="••••••••"
+                className="text-sm pr-10"
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword((v) => !v)}
+                className="absolute inset-y-0 right-0 flex items-center px-3 text-muted-foreground hover:text-foreground"
+                aria-label={showPassword ? "Ocultar senha" : "Mostrar senha"}
+              >
+                {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+              </button>
+            </div>
           </div>
+
+          {isSignUp && (
+            <div className="space-y-2">
+              <Label htmlFor="confirmPassword" className="text-foreground text-xs font-body">Confirmar senha</Label>
+              <div className="relative">
+                <Input
+                  id="confirmPassword"
+                  type={showConfirmPassword ? "text" : "password"}
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  required
+                  minLength={6}
+                  placeholder="••••••••"
+                  className="text-sm pr-10"
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowConfirmPassword((v) => !v)}
+                  className="absolute inset-y-0 right-0 flex items-center px-3 text-muted-foreground hover:text-foreground"
+                  aria-label={showConfirmPassword ? "Ocultar senha" : "Mostrar senha"}
+                >
+                  {showConfirmPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                </button>
+              </div>
+              {confirmPassword && password !== confirmPassword && (
+                <p className="text-xs text-destructive font-body">As senhas não conferem.</p>
+              )}
+            </div>
+          )}
 
           <Button type="submit" disabled={loading} className="w-full">
             {loading ? "Aguarde..." : isSignUp ? "Criar conta" : "Entrar"}
