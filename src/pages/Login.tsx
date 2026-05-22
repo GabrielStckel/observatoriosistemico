@@ -47,8 +47,9 @@ const Login = () => {
     e.preventDefault();
 
     if (isSignUp) {
-      if (!firstName.trim() || !lastName.trim()) {
-        toast({ title: "Dados incompletos", description: "Informe nome e sobrenome.", variant: "destructive" });
+      const nameParts = fullName.trim().split(/\s+/);
+      if (nameParts.length < 2) {
+        toast({ title: "Dados incompletos", description: "Informe o nome completo (nome e sobrenome).", variant: "destructive" });
         return;
       }
       if (password !== confirmPassword) {
