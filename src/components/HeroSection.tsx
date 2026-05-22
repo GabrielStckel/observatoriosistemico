@@ -106,7 +106,7 @@ const HeroSection = () => {
           <p className="font-body text-sm text-primary-foreground/40 max-w-md mx-auto leading-relaxed text-center">
             Ciência sistêmica aplicada à vida e ao trabalho.
             <br />
-            Encontros presenciais e híbridos.
+            Encontros presenciais.
           </p>
 
           

@@ -9,7 +9,6 @@ const SpecificObjectivesSection = lazy(() => import("@/components/SpecificObject
 const JourneySection = lazy(() => import("@/components/JourneySection"));
 const SupportSection = lazy(() => import("@/components/SupportSection"));
 const LaboratorySection = lazy(() => import("@/components/LaboratorySection"));
-const HybridSection = lazy(() => import("@/components/HybridSection"));
 const MeetingSummariesSection = lazy(() => import("@/components/MeetingSummariesSection"));
 const ScheduleSection = lazy(() => import("@/components/ScheduleSection"));
 
@@ -36,7 +35,6 @@ const Index3 = () => {
         <JourneySection />
         <SupportSection />
         <LaboratorySection />
-        <HybridSection />
         <MeetingSummariesSection />
         <ScheduleSection />
         
