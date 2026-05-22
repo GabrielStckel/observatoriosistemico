@@ -62,12 +62,11 @@ const Login = () => {
 
     try {
       if (isSignUp) {
-        const fullName = `${firstName.trim()} ${lastName.trim()}`;
         const { data, error } = await supabase.auth.signUp({
           email: email.trim(),
           password,
           options: {
-            data: { full_name: fullName },
+            data: { full_name: fullName.trim() },
             emailRedirectTo: `${window.location.origin}${from}`,
           },
         });
