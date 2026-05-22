@@ -14,8 +14,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+  const [fullName, setFullName] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -48,8 +47,9 @@ const Login = () => {
     e.preventDefault();
 
     if (isSignUp) {
-      if (!firstName.trim() || !lastName.trim()) {
-        toast({ title: "Dados incompletos", description: "Informe nome e sobrenome.", variant: "destructive" });
+      const nameParts = fullName.trim().split(/\s+/);
+      if (nameParts.length < 2) {
+        toast({ title: "Dados incompletos", description: "Informe o nome completo (nome e sobrenome).", variant: "destructive" });
         return;
       }
       if (password !== confirmPassword) {
@@ -62,12 +62,11 @@ const Login = () => {
 
     try {
       if (isSignUp) {
-        const fullName = `${firstName.trim()} ${lastName.trim()}`;
         const { data, error } = await supabase.auth.signUp({
           email: email.trim(),
           password,
           options: {
-            data: { full_name: fullName },
+            data: { full_name: fullName.trim() },
             emailRedirectTo: `${window.location.origin}${from}`,
           },
         });
@@ -109,31 +108,17 @@ const Login = () => {
 
         <form onSubmit={handleSubmit} className="card-refined p-6 space-y-4 bg-surface">
           {isSignUp && (
-            <div className="grid grid-cols-2 gap-2">
-              <div className="space-y-2">
-                <Label htmlFor="firstName" className="text-foreground text-xs font-body">Nome</Label>
-                <Input
-                  id="firstName"
-                  type="text"
-                  value={firstName}
-                  onChange={(e) => setFirstName(e.target.value)}
-                  required
-                  placeholder="Nome"
-                  className="text-sm"
-                />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="lastName" className="text-foreground text-xs font-body">Sobrenome</Label>
-                <Input
-                  id="lastName"
-                  type="text"
-                  value={lastName}
-                  onChange={(e) => setLastName(e.target.value)}
-                  required
-                  placeholder="Sobrenome"
-                  className="text-sm"
-                />
-              </div>
+            <div className="space-y-2">
+              <Label htmlFor="fullName" className="text-foreground text-xs font-body">Nome completo</Label>
+              <Input
+                id="fullName"
+                type="text"
+                value={fullName}
+                onChange={(e) => setFullName(e.target.value)}
+                required
+                placeholder="Nome e sobrenome"
+                className="text-sm"
+              />
             </div>
           )}
 
