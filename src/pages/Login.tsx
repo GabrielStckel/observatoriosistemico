@@ -108,31 +108,17 @@ const Login = () => {
 
         <form onSubmit={handleSubmit} className="card-refined p-6 space-y-4 bg-surface">
           {isSignUp && (
-            <div className="grid grid-cols-2 gap-2">
-              <div className="space-y-2">
-                <Label htmlFor="firstName" className="text-foreground text-xs font-body">Nome</Label>
-                <Input
-                  id="firstName"
-                  type="text"
-                  value={firstName}
-                  onChange={(e) => setFirstName(e.target.value)}
-                  required
-                  placeholder="Nome"
-                  className="text-sm"
-                />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="lastName" className="text-foreground text-xs font-body">Sobrenome</Label>
-                <Input
-                  id="lastName"
-                  type="text"
-                  value={lastName}
-                  onChange={(e) => setLastName(e.target.value)}
-                  required
-                  placeholder="Sobrenome"
-                  className="text-sm"
-                />
-              </div>
+            <div className="space-y-2">
+              <Label htmlFor="fullName" className="text-foreground text-xs font-body">Nome completo</Label>
+              <Input
+                id="fullName"
+                type="text"
+                value={fullName}
+                onChange={(e) => setFullName(e.target.value)}
+                required
+                placeholder="Nome e sobrenome"
+                className="text-sm"
+              />
             </div>
           )}
 
