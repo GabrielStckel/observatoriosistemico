@@ -38,33 +38,38 @@ const Login = () => {
     e.preventDefault();
     setLoading(true);
 
-    if (isSignUp) {
-      const { error } = await supabase.auth.signUp({
-        email: email.trim(),
-        password,
-        options: {
-          data: { full_name: fullName.trim() },
-          emailRedirectTo: window.location.origin,
-        },
-      });
-      if (error) {
-        toast({ title: "Erro ao criar conta", description: error.message, variant: "destructive" });
+    try {
+      if (isSignUp) {
+        const { data, error } = await supabase.auth.signUp({
+          email: email.trim(),
+          password,
+          options: {
+            data: { full_name: fullName.trim() },
+            emailRedirectTo: `${window.location.origin}/ano3`,
+          },
+        });
+        if (error) {
+          toast({ title: "Erro ao criar conta", description: error.message, variant: "destructive" });
+        } else if (data.session) {
+          toast({ title: "Conta criada!", description: "Redirecionando..." });
+          navigate("/ano3", { replace: true });
+        } else {
+          toast({ title: "Conta criada!", description: "Verifique seu email para confirmar o cadastro." });
+        }
       } else {
-        toast({ title: "Conta criada!", description: "Verifique seu email para confirmar o cadastro." });
+        const { error } = await supabase.auth.signInWithPassword({
+          email: email.trim(),
+          password,
+        });
+        if (error) {
+          toast({ title: "Erro ao entrar", description: error.message, variant: "destructive" });
+        } else {
+          navigate("/ano3", { replace: true });
+        }
       }
-    } else {
-      const { error } = await supabase.auth.signInWithPassword({
-        email: email.trim(),
-        password,
-      });
-      if (error) {
-        toast({ title: "Erro ao entrar", description: error.message, variant: "destructive" });
-      } else {
-        navigate("/ano3", { replace: true });
-      }
+    } finally {
+      setLoading(false);
     }
-
-    setLoading(false);
   };
 
   return (
