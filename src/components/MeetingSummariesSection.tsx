@@ -10,7 +10,7 @@ interface SummaryPDF {
 
 const summaries: SummaryPDF[] = [
   { month: "Março", title: "Resumo — Encontro de Março" },
-  { month: "Abril", title: "Resumo — Encontro de Abril" },
+  { month: "Abril", title: "Resumo — Encontro de Abril", url: "/resumos/ObservatorioSistemico_2026-04.pdf" },
   { month: "Maio", title: "Resumo — Encontro de Maio" },
   { month: "Junho", title: "Resumo — Encontro de Junho" },
   { month: "Julho", title: "Resumo — Encontro de Julho" },
