@@ -31,14 +31,14 @@ const Login = () => {
 
   const handleOAuth = async (provider: "google" | "apple") => {
     const result = await lovable.auth.signInWithOAuth(provider, {
-      redirect_uri: window.location.origin + "/informacoes",
+      redirect_uri: window.location.origin + from,
     });
     if (result.error) {
       toast({ title: "Erro ao entrar", description: result.error.message, variant: "destructive" });
       return;
     }
     if (result.redirected) return;
-    navigate("/informacoes", { replace: true });
+    navigate(from, { replace: true });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -65,14 +65,14 @@ const Login = () => {
           password,
           options: {
             data: { full_name: fullName },
-            emailRedirectTo: `${window.location.origin}/informacoes`,
+            emailRedirectTo: `${window.location.origin}${from}`,
           },
         });
         if (error) {
           toast({ title: "Erro ao criar conta", description: error.message, variant: "destructive" });
         } else if (data.session) {
           toast({ title: "Conta criada!", description: "Redirecionando..." });
-          navigate("/informacoes", { replace: true });
+          navigate(from, { replace: true });
         } else {
           toast({ title: "Conta criada!", description: "Verifique seu email para confirmar o cadastro." });
         }
@@ -84,7 +84,7 @@ const Login = () => {
         if (error) {
           toast({ title: "Erro ao entrar", description: error.message, variant: "destructive" });
         } else {
-          navigate("/informacoes", { replace: true });
+          navigate(from, { replace: true });
         }
       }
     } finally {
