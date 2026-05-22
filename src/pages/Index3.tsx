@@ -1,9 +1,8 @@
 import { lazy, Suspense, useEffect } from "react";
 import HeroSection from "@/components/HeroSection";
-import { Instagram, LogOut } from "lucide-react";
+import { Instagram } from "lucide-react";
 import { trackActivity } from "@/hooks/useActivityTracker";
-import { useAuth } from "@/hooks/useAuth";
-import { Button } from "@/components/ui/button";
+import ProfileMenu from "@/components/ProfileMenu";
 
 const ObjectiveSection = lazy(() => import("@/components/ObjectiveSection"));
 const SpecificObjectivesSection = lazy(() => import("@/components/SpecificObjectivesSection"));
