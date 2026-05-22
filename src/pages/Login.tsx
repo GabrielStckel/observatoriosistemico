@@ -20,12 +20,14 @@ const Login = () => {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
   const { toast } = useToast();
   const { session } = useAuth();
+  const from = (location.state as { from?: string } | null)?.from || "/informacoes";
 
   useEffect(() => {
-    if (session) navigate("/informacoes", { replace: true });
-  }, [session, navigate]);
+    if (session) navigate(from, { replace: true });
+  }, [session, navigate, from]);
 
   const handleOAuth = async (provider: "google" | "apple") => {
     const result = await lovable.auth.signInWithOAuth(provider, {
