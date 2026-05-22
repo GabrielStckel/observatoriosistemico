@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
+import { lovable } from "@/integrations/lovable";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -19,8 +20,20 @@ const Login = () => {
   const { session } = useAuth();
 
   useEffect(() => {
-    if (session) navigate("/informacoes", { replace: true });
+    if (session) navigate("/ano3", { replace: true });
   }, [session, navigate]);
+
+  const handleOAuth = async (provider: "google" | "apple") => {
+    const result = await lovable.auth.signInWithOAuth(provider, {
+      redirect_uri: window.location.origin + "/ano3",
+    });
+    if (result.error) {
+      toast({ title: "Erro ao entrar", description: result.error.message, variant: "destructive" });
+      return;
+    }
+    if (result.redirected) return;
+    navigate("/ano3", { replace: true });
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -48,7 +61,7 @@ const Login = () => {
       if (error) {
         toast({ title: "Erro ao entrar", description: error.message, variant: "destructive" });
       } else {
-        navigate("/informacoes", { replace: true });
+        navigate("/ano3", { replace: true });
       }
     }
 
