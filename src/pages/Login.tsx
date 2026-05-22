@@ -24,19 +24,19 @@ const Login = () => {
   const { session } = useAuth();
 
   useEffect(() => {
-    if (session) navigate("/ano3", { replace: true });
+    if (session) navigate("/informacoes", { replace: true });
   }, [session, navigate]);
 
   const handleOAuth = async (provider: "google" | "apple") => {
     const result = await lovable.auth.signInWithOAuth(provider, {
-      redirect_uri: window.location.origin + "/ano3",
+      redirect_uri: window.location.origin + "/informacoes",
     });
     if (result.error) {
       toast({ title: "Erro ao entrar", description: result.error.message, variant: "destructive" });
       return;
     }
     if (result.redirected) return;
-    navigate("/ano3", { replace: true });
+    navigate("/informacoes", { replace: true });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -63,14 +63,14 @@ const Login = () => {
           password,
           options: {
             data: { full_name: fullName },
-            emailRedirectTo: `${window.location.origin}/ano3`,
+            emailRedirectTo: `${window.location.origin}/informacoes`,
           },
         });
         if (error) {
           toast({ title: "Erro ao criar conta", description: error.message, variant: "destructive" });
         } else if (data.session) {
           toast({ title: "Conta criada!", description: "Redirecionando..." });
-          navigate("/ano3", { replace: true });
+          navigate("/informacoes", { replace: true });
         } else {
           toast({ title: "Conta criada!", description: "Verifique seu email para confirmar o cadastro." });
         }
@@ -82,7 +82,7 @@ const Login = () => {
         if (error) {
           toast({ title: "Erro ao entrar", description: error.message, variant: "destructive" });
         } else {
-          navigate("/ano3", { replace: true });
+          navigate("/informacoes", { replace: true });
         }
       }
     } finally {
