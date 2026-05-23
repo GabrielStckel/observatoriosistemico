@@ -95,23 +95,23 @@ const Login = () => {
   };
 
   return (
-    <main className="min-h-[100dvh] theme-blue gradient-hero flex items-center justify-center px-5 py-10">
+    <main className="min-h-[100dvh] theme-blue gradient-hero flex items-center justify-center px-4 sm:px-6 py-8 overflow-x-hidden">
       <div className="w-full max-w-sm mx-auto flex flex-col items-center">
-        <div className="text-center mb-8 w-full">
-          <p className="text-primary-foreground/50 text-[10px] tracking-[0.3em] uppercase font-body mb-3">
+        <div className="text-center mb-6 w-full">
+          <p className="text-primary-foreground/50 text-[10px] tracking-[0.2em] uppercase font-body mb-2">
             Ano III · Mastermind
           </p>
-          <h1 className="font-display text-2xl sm:text-3xl font-medium text-primary-foreground tracking-wide leading-tight mb-3">
-            Observatório<br />Sistêmico
+          <h1 className="font-display text-xl sm:text-2xl md:text-3xl font-medium text-primary-foreground tracking-wide leading-tight mb-2">
+            Observatório Sistêmico
           </h1>
           <div className="w-10 h-px bg-primary-foreground/30 mx-auto mb-3" />
-          <p className="text-primary-foreground/60 text-sm font-body">
+          <p className="text-primary-foreground/60 text-sm font-body px-2">
             {isSignUp ? "Crie sua conta para acessar" : "Entre para acessar o conteúdo"}
           </p>
         </div>
 
 
-        <form onSubmit={handleSubmit} className="card-refined p-6 space-y-4 bg-surface w-full shadow-2xl rounded-2xl">
+        <form onSubmit={handleSubmit} className="card-refined p-5 sm:p-6 space-y-4 bg-surface w-full shadow-2xl rounded-2xl">
           {isSignUp && (
             <div className="space-y-2">
               <Label htmlFor="fullName" className="text-foreground text-xs font-body">Nome completo</Label>
