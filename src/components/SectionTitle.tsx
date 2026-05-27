@@ -18,9 +18,10 @@ const SectionTitle = ({ label, subtitle, light = false }: SectionTitleProps) => 
       </h2>
       {subtitle && (
         <p
-          className={`font-body text-sm mt-2 font-normal ${
+          className={`font-body text-sm mt-2 font-normal text-center ${
             light ? "text-primary-foreground/60" : "text-muted-foreground"
           }`}
+          style={{ textAlign: "center", hyphens: "none" }}
         >
           {subtitle}
         </p>
