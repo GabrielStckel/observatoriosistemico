@@ -88,6 +88,9 @@ const LaboratorySection = () => {
               <span className="block text-primary-foreground font-body text-sm font-semibold">
                 {item.dates}
               </span>
+              <span className="block text-primary-foreground/70 font-body text-[11px] mt-0.5">
+                19:30 às 22:00
+              </span>
 
               <button
                 onClick={() => setOpenMenu(openMenu === i ? null : i)}
