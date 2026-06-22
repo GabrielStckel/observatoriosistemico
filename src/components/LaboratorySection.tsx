@@ -4,20 +4,20 @@ import { useState } from "react";
 import { trackActivity } from "@/hooks/useActivityTracker";
 
 const labSchedule = [
-  { month: "Julho", dates: "08/07", start: "2025-07-08", end: "2025-07-09" },
-  { month: "Agosto", dates: "05/08", start: "2025-08-05", end: "2025-08-06" },
-  { month: "Setembro", dates: "09/09", start: "2025-09-09", end: "2025-09-10" },
-  { month: "Outubro", dates: "07/10", start: "2025-10-07", end: "2025-10-08" },
-  { month: "Novembro", dates: "04/11", start: "2025-11-04", end: "2025-11-05" },
-  { month: "Dezembro", dates: "09/12", start: "2025-12-09", end: "2025-12-10" },
+  { month: "Julho", dates: "08/07", start: "2025-07-08T22:30:00Z", end: "2025-07-09T01:00:00Z" },
+  { month: "Agosto", dates: "05/08", start: "2025-08-05T22:30:00Z", end: "2025-08-06T01:00:00Z" },
+  { month: "Setembro", dates: "09/09", start: "2025-09-09T22:30:00Z", end: "2025-09-10T01:00:00Z" },
+  { month: "Outubro", dates: "07/10", start: "2025-10-07T22:30:00Z", end: "2025-10-08T01:00:00Z" },
+  { month: "Novembro", dates: "04/11", start: "2025-11-04T22:30:00Z", end: "2025-11-05T01:00:00Z" },
+  { month: "Dezembro", dates: "09/12", start: "2025-12-09T22:30:00Z", end: "2025-12-10T01:00:00Z" },
 ];
 
 const eventTitle = "Laboratório Sistêmico";
 const eventDescription = "Encontro do Laboratório Sistêmico";
 
 function toGoogleCalendarUrl(item: typeof labSchedule[0]) {
-  const startDate = item.start.replace(/-/g, "");
-  const endDate = item.end.replace(/-/g, "");
+  const startDate = item.start.replace(/[-:]/g, "");
+  const endDate = item.end.replace(/[-:]/g, "");
   const params = new URLSearchParams({
     action: "TEMPLATE",
     text: eventTitle,
@@ -34,12 +34,12 @@ function downloadICS(item: typeof labSchedule[0]) {
 
 function buildICSForItems(items: typeof labSchedule) {
   const events = items.map((item) => {
-    const startDate = item.start.replace(/-/g, "");
-    const endDate = item.end.replace(/-/g, "");
+    const startDate = item.start.replace(/[-:]/g, "");
+    const endDate = item.end.replace(/[-:]/g, "");
     return [
       "BEGIN:VEVENT",
-      `DTSTART;VALUE=DATE:${startDate}`,
-      `DTEND;VALUE=DATE:${endDate}`,
+      `DTSTART:${startDate}`,
+      `DTEND:${endDate}`,
       `SUMMARY:${eventTitle} - ${item.month}`,
       `DESCRIPTION:${eventDescription}`,
       "END:VEVENT",
