@@ -1,18 +1,14 @@
-# Plano: melhorar o card de download "materiais encontro 1"
+# Plano: ajustar o card de download no mobile
 
-A caixa atual de download na seção **Materiais de estudo para download** foi considerada muito larga e muito simples. Você escolheu a direção **Card horizontal polido**.
+No mobile o card horizontal fica apertado e o título "materiais encontro 1" aparece cortado como "mate...". O desktop está bom e será mantido.
 
-### O que será feito
+### O que será feito (em `src/components/SupportSection.tsx`)
 
-1. Substituir o card de download atual em `src/components/SupportSection.tsx` por um card horizontal mais refinado.
-2. Aplicar os tokens semânticos do projeto (cor institucional, tipografia Inter, sombras suaves) mantendo a consistência visual.
-3. Deixar o card centralizado e menos largo (`max-w-2xl`), com:
-   - Ícone de arquivo maior em um quadrado com fundo translúcido (`bg-accent/10`).
-   - Título e uma linha de metadados ("ZIP • 6 arquivos").
-   - Botão de ação sólido e visível com ícone de download.
-4. Preservar o link de download, o atributo `download` e o `trackActivity("study_download", ...)` existentes.
-5. Rodar a verificação de build TypeScript para garantir que não há erros.
+1. Tornar o card responsivo: empilhar verticalmente no mobile (`flex-col`) e voltar ao horizontal a partir de `sm` (`sm:flex-row sm:items-center`).
+2. No mobile, centralizar ícone, texto e botão; alinhar à esquerda/linha a partir de `sm`.
+3. Remover o `truncate` do título no mobile (deixar o nome completo aparecer), mantendo o comportamento no desktop.
+4. Fazer o botão "Baixar tudo" ocupar largura total no mobile (`w-full sm:w-auto`) para um toque mais confortável.
 
 ### Resultado esperado
 
-O card ficará mais compacto, com hierarquia visual clara e botão de download proeminente, sem perder a identidade institucional do Observatório Sistêmico.
+No celular o card mostra ícone, nome completo, metadados e um botão largo, empilhados e legíveis; no desktop permanece igual ao layout horizontal já aprovado.
