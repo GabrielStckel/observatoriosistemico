@@ -150,30 +150,27 @@ const SupportSection = () => {
           Materiais de estudo para download
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          {materials.map((item, i) => (
-            <a
-              key={i}
-              href={item.url}
-              download
-              onClick={() => trackActivity("study_download", { title: item.title })}
-              className="card-refined p-4 flex items-start gap-3 border-accent/40 hover:border-accent transition-colors"
-            >
-              <FileText size={20} className="text-accent mt-0.5 shrink-0" />
-              <div className="flex-1 min-w-0">
-                <p
-                  className="font-body text-sm font-semibold text-foreground"
-                  style={{ textAlign: "left", hyphens: "none" }}
-                >
-                  {item.title}
-                </p>
-                <span className="inline-flex items-center gap-1.5 text-xs font-body font-bold text-accent mt-2">
-                  <Download size={14} />
-                  Baixar
-                </span>
-              </div>
-            </a>
-          ))}
+        <div className="grid grid-cols-1">
+          <a
+            href={materiaisEncontro1.url}
+            download
+            onClick={() => trackActivity("study_download", { title: "materiais encontro 1" })}
+            className="card-refined p-4 flex items-start gap-3 border-accent/40 hover:border-accent transition-colors"
+          >
+            <FileArchive size={20} className="text-accent mt-0.5 shrink-0" />
+            <div className="flex-1 min-w-0">
+              <p
+                className="font-body text-sm font-semibold text-foreground"
+                style={{ textAlign: "left", hyphens: "none" }}
+              >
+                materiais encontro 1
+              </p>
+              <span className="inline-flex items-center gap-1.5 text-xs font-body font-bold text-accent mt-2">
+                <Download size={14} />
+                Baixar tudo
+              </span>
+            </div>
+          </a>
         </div>
       </div>
     </section>
