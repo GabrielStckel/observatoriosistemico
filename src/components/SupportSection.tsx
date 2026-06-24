@@ -67,14 +67,8 @@ function triggerDownload(content: string, filename: string) {
   URL.revokeObjectURL(url);
 }
 
-const materials = [
-  { title: "Vera Bassoi", url: veraBassoi.url },
-  { title: "O Homem Holístico", url: oHomemHolistico.url },
-  { title: "Teoria Holoinformacional da Consciência", url: teoriaHoloinformacional.url },
-  { title: "Ciência, Consciência e Espiritualidade", url: cienciaConscienciaEspiritualidade.url },
-  { title: "Auto-Organização e Consciência", url: autoOrganizacaoConsciencia.url },
-  { title: "10 Cartografias", url: dezCartografias.url },
-];
+
+
 
 const SupportSection = () => {
   const [openMenu, setOpenMenu] = useState<number | null>(null);
