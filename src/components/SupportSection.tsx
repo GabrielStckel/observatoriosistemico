@@ -1,14 +1,9 @@
 import SectionTitle from "./SectionTitle";
-import { FileText, Download, CalendarPlus } from "lucide-react";
+import { FileArchive, Download, CalendarPlus } from "lucide-react";
 import { useState } from "react";
 import { trackActivity } from "@/hooks/useActivityTracker";
 
-import veraBassoi from "@/assets/vera-bassoi.pdf.asset.json";
-import oHomemHolistico from "@/assets/o-homem-holistico.pdf.asset.json";
-import teoriaHoloinformacional from "@/assets/teoria-holoinformacional.docx.asset.json";
-import cienciaConscienciaEspiritualidade from "@/assets/ciencia-consciencia-espiritualidade.pdf.asset.json";
-import autoOrganizacaoConsciencia from "@/assets/auto-organizacao-consciencia.docx.asset.json";
-import dezCartografias from "@/assets/10-cartografias.pdf.asset.json";
+import materiaisEncontro1 from "@/assets/materiais-encontro-1.zip.asset.json";
 
 const schedule = [
   { month: "Julho", dates: "08/07", start: "2025-07-08T22:30:00Z", end: "2025-07-09T01:00:00Z" },
