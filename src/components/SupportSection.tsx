@@ -165,10 +165,7 @@ const SupportSection = () => {
               className="font-body text-base font-semibold text-foreground leading-snug sm:truncate"
               style={{ hyphens: "none" }}
             >
-              materiais encontro 1
-            </p>
-            <p className="font-body text-sm text-muted-foreground mt-0.5">
-              ZIP • 6 arquivos
+              Materiais Encontro 1
             </p>
           </div>
 
