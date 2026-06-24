@@ -36,7 +36,7 @@ const Index3 = () => {
         <JourneySection />
         <SupportSection />
         <LaboratorySection />
-        <SystemicStudiesSection />
+        
         <MeetingSummariesSection />
         <ScheduleSection />
         
