@@ -10,7 +10,7 @@ const JourneySection = lazy(() => import("@/components/JourneySection"));
 const SupportSection = lazy(() => import("@/components/SupportSection"));
 const LaboratorySection = lazy(() => import("@/components/LaboratorySection"));
 const MeetingSummariesSection = lazy(() => import("@/components/MeetingSummariesSection"));
-const SystemicStudiesSection = lazy(() => import("@/components/SystemicStudiesSection"));
+
 const ScheduleSection = lazy(() => import("@/components/ScheduleSection"));
 
 
