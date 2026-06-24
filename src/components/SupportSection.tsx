@@ -1,14 +1,9 @@
 import SectionTitle from "./SectionTitle";
-import { FileText, Download, CalendarPlus } from "lucide-react";
+import { FileArchive, Download, CalendarPlus } from "lucide-react";
 import { useState } from "react";
 import { trackActivity } from "@/hooks/useActivityTracker";
 
-import veraBassoi from "@/assets/vera-bassoi.pdf.asset.json";
-import oHomemHolistico from "@/assets/o-homem-holistico.pdf.asset.json";
-import teoriaHoloinformacional from "@/assets/teoria-holoinformacional.docx.asset.json";
-import cienciaConscienciaEspiritualidade from "@/assets/ciencia-consciencia-espiritualidade.pdf.asset.json";
-import autoOrganizacaoConsciencia from "@/assets/auto-organizacao-consciencia.docx.asset.json";
-import dezCartografias from "@/assets/10-cartografias.pdf.asset.json";
+import materiaisEncontro1 from "@/assets/materiais-encontro-1.zip.asset.json";
 
 const schedule = [
   { month: "Julho", dates: "08/07", start: "2025-07-08T22:30:00Z", end: "2025-07-09T01:00:00Z" },
@@ -72,14 +67,8 @@ function triggerDownload(content: string, filename: string) {
   URL.revokeObjectURL(url);
 }
 
-const materials = [
-  { title: "Vera Bassoi", url: veraBassoi.url },
-  { title: "O Homem Holístico", url: oHomemHolistico.url },
-  { title: "Teoria Holoinformacional da Consciência", url: teoriaHoloinformacional.url },
-  { title: "Ciência, Consciência e Espiritualidade", url: cienciaConscienciaEspiritualidade.url },
-  { title: "Auto-Organização e Consciência", url: autoOrganizacaoConsciencia.url },
-  { title: "10 Cartografias", url: dezCartografias.url },
-];
+
+
 
 const SupportSection = () => {
   const [openMenu, setOpenMenu] = useState<number | null>(null);
@@ -161,30 +150,27 @@ const SupportSection = () => {
           Materiais de estudo para download
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          {materials.map((item, i) => (
-            <a
-              key={i}
-              href={item.url}
-              download
-              onClick={() => trackActivity("study_download", { title: item.title })}
-              className="card-refined p-4 flex items-start gap-3 border-accent/40 hover:border-accent transition-colors"
-            >
-              <FileText size={20} className="text-accent mt-0.5 shrink-0" />
-              <div className="flex-1 min-w-0">
-                <p
-                  className="font-body text-sm font-semibold text-foreground"
-                  style={{ textAlign: "left", hyphens: "none" }}
-                >
-                  {item.title}
-                </p>
-                <span className="inline-flex items-center gap-1.5 text-xs font-body font-bold text-accent mt-2">
-                  <Download size={14} />
-                  Baixar
-                </span>
-              </div>
-            </a>
-          ))}
+        <div className="grid grid-cols-1">
+          <a
+            href={materiaisEncontro1.url}
+            download
+            onClick={() => trackActivity("study_download", { title: "materiais encontro 1" })}
+            className="card-refined p-4 flex items-start gap-3 border-accent/40 hover:border-accent transition-colors"
+          >
+            <FileArchive size={20} className="text-accent mt-0.5 shrink-0" />
+            <div className="flex-1 min-w-0">
+              <p
+                className="font-body text-sm font-semibold text-foreground"
+                style={{ textAlign: "left", hyphens: "none" }}
+              >
+                materiais encontro 1
+              </p>
+              <span className="inline-flex items-center gap-1.5 text-xs font-body font-bold text-accent mt-2">
+                <Download size={14} />
+                Baixar tudo
+              </span>
+            </div>
+          </a>
         </div>
       </div>
     </section>
