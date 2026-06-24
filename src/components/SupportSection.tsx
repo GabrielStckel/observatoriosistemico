@@ -167,6 +167,7 @@ const SupportSection = () => {
             >
               Materiais Encontro 1
             </p>
+            <p className="font-body text-sm text-muted-foreground mt-0.5">6 arquivos</p>
           </div>
 
           <span className="flex-shrink-0 inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent/90 text-accent-foreground px-4 py-2.5 rounded-lg text-sm font-medium transition-colors whitespace-nowrap w-full sm:w-auto">
