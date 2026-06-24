@@ -154,7 +154,7 @@ const SupportSection = () => {
           href={materiaisEncontro1.url}
           download
           onClick={() => trackActivity("study_download", { title: "materiais encontro 1" })}
-          className="max-w-2xl mx-auto w-full bg-surface border border-border rounded-xl shadow-sm hover:shadow-md transition-all duration-300 p-5 flex items-center gap-5 group"
+          className="max-w-2xl mx-auto w-full bg-surface border border-border rounded-xl shadow-sm hover:shadow-md transition-all duration-300 p-5 flex flex-col sm:flex-row items-center gap-4 sm:gap-5 group text-center sm:text-left"
         >
           <div className="flex-shrink-0 w-14 h-14 bg-accent/10 rounded-lg flex items-center justify-center text-accent">
             <FileArchive className="w-8 h-8" />
@@ -162,8 +162,8 @@ const SupportSection = () => {
 
           <div className="flex-1 min-w-0">
             <p
-              className="font-body text-base font-semibold text-foreground leading-snug truncate"
-              style={{ textAlign: "left", hyphens: "none" }}
+              className="font-body text-base font-semibold text-foreground leading-snug sm:truncate"
+              style={{ hyphens: "none" }}
             >
               materiais encontro 1
             </p>
@@ -172,7 +172,7 @@ const SupportSection = () => {
             </p>
           </div>
 
-          <span className="flex-shrink-0 inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-accent-foreground px-4 py-2.5 rounded-lg text-sm font-medium transition-colors whitespace-nowrap">
+          <span className="flex-shrink-0 inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent/90 text-accent-foreground px-4 py-2.5 rounded-lg text-sm font-medium transition-colors whitespace-nowrap w-full sm:w-auto">
             <Download className="w-4 h-4" />
             Baixar tudo
           </span>
