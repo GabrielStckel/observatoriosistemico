@@ -1,14 +1,11 @@
-# Plano: ajustar o card de download no mobile
+# Resumos dos Encontros — PDFs de Junho e Julho
 
-No mobile o card horizontal fica apertado e o título "materiais encontro 1" aparece cortado como "mate...". O desktop está bom e será mantido.
+Adicionar os dois PDFs enviados à seção "Resumos dos Encontros" (páginas /ano3 e /informacoes, que compartilham a mesma seção):
 
-### O que será feito (em `src/components/SupportSection.tsx`)
+1. Copiar os arquivos enviados para `public/resumos/`:
+   - `Observatório_Sistêmico_Módulo_III.pdf` → `public/resumos/ObservatorioSistemico_2026-06.pdf` (Junho)
+   - `Observatório_Sistêmico_Módulo_IV.pdf` → `public/resumos/ObservatorioSistemico_2026-07.pdf` (Julho)
+2. Em `src/components/MeetingSummariesSection.tsx`, preencher a `url` dos cards de Junho e Julho apontando para esses PDFs (padrão já usado por Abril e Maio).
+3. Cards de Junho e Julho passam a mostrar "Baixar PDF" com destaque azul; os demais continuam "Em breve".
 
-1. Tornar o card responsivo: empilhar verticalmente no mobile (`flex-col`) e voltar ao horizontal a partir de `sm` (`sm:flex-row sm:items-center`).
-2. No mobile, centralizar ícone, texto e botão; alinhar à esquerda/linha a partir de `sm`.
-3. Remover o `truncate` do título no mobile (deixar o nome completo aparecer), mantendo o comportamento no desktop.
-4. Fazer o botão "Baixar tudo" ocupar largura total no mobile (`w-full sm:w-auto`) para um toque mais confortável.
-
-### Resultado esperado
-
-No celular o card mostra ícone, nome completo, metadados e um botão largo, empilhados e legíveis; no desktop permanece igual ao layout horizontal já aprovado.
+Sem alterações em outras seções.
